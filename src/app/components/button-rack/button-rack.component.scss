@@ -1,0 +1,21 @@
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(2, auto); 
+    gap: 80% 20px;
+  }
+  
+  .grid-item img {
+    width: 100%;  
+    height: auto;
+    border: 1px solid #FAF9F6 ;
+    background-color: #FFFFF0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem;
+  }
+
+  .grid-item img:hover{
+    background-color: #EFEFE0;
+  }

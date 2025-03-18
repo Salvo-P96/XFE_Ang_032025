@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: heldane,prata,sans-serif;
+}
+
+.parallax {
+    display: flex;
+    flex-direction: column-reverse;
+    background-image: url('https://shorturl.at/xJBP0');
+    height: 900px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: inset 0 0 100px #000000;
+  }
+
+  .parallaxTxt{
+    padding: 1rem;
+    margin-left: 5rem;
+  }
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 50rem;
+    width: 100%;
+    padding-top: 2rem;
+    background-color: #1A1A1A;
+}
+
+.metallic {
+    font-size: 4rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, #ffd700, #ffcc00, #e6a900, #ffb700);
+    background-size: 400% 400%;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: metallic 10s linear infinite;
+  
+    @keyframes metallic {
+        0% {
+            background-position: 200% 250%;
+          }
+          50% {
+            background-position: -200% -250%;
+          }
+          100% {
+            background-position: 200% 250%;
+          }
+    }
+  }
+
+  h3{
+    color: #FAF9F6;
+  }
