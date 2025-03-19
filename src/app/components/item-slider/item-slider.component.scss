@@ -1,0 +1,34 @@
+$myWidt: 30rem;
+$auto1:"C:/VSC/AngularPRJ/AngularPRJ-01/src/assets/Auto1.png";
+$auto2:"C:/VSC/AngularPRJ/AngularPRJ-01/src/assets/Auto2.png";
+$auto3:"C:/VSC/AngularPRJ/AngularPRJ-01/src/assets/Auto3.png";
+$auto4:"C:/VSC/AngularPRJ/AngularPRJ-01/src/assets/Auto4.png";
+$auto5:"C:/VSC/AngularPRJ/AngularPRJ-01/src/assets/Auto5.png";
+
+.slide{
+    width: $myWidt;
+    height: $myWidt/1,915;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#slide-1{
+    background-image: URL($auto1);
+}
+
+#slide-2{
+    background-image: URL($auto);
+}
+
+#slide-3{
+    background-image: URL($auto3);
+}
+
+#slide-4{
+    background-image: URL($auto4);
+}
+
+#slide-5{
+    background-image: URL($auto5);
+}
