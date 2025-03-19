@@ -1,34 +1,51 @@
 $myWidt: 30rem;
-$auto1:"C:/VSC/AngularPRJ/AngularPRJ-01/src/assets/Auto1.png";
-$auto2:"C:/VSC/AngularPRJ/AngularPRJ-01/src/assets/Auto2.png";
-$auto3:"C:/VSC/AngularPRJ/AngularPRJ-01/src/assets/Auto3.png";
-$auto4:"C:/VSC/AngularPRJ/AngularPRJ-01/src/assets/Auto4.png";
-$auto5:"C:/VSC/AngularPRJ/AngularPRJ-01/src/assets/Auto5.png";
+$auto1:"../../../assets/Auto1.png";
+$auto2:"../../../assets/Auto2.png";
+$auto3:"../../../assets/Auto3.png";
+$auto4:"../../../assets/Auto4.png";
+$auto5:"../../../assets/Auto5.png";
+
+.slider{
+    display: flex;
+    align-content: space-evenly;
+    width: 80%;
+    height: 300px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
 
 .slide{
+    height: auto;
+    background-color:  #f6f6f6;
+    padding: 1rem;
+    outline: 10px solid #060606;
+}
+
+#slideImg{
     width: $myWidt;
-    height: $myWidt/1,915;
+    height: $myWidt/1.915;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    flex-shrink: 0;
 }
 
-#slide-1{
+.innerSlide1{
     background-image: URL($auto1);
 }
 
-#slide-2{
-    background-image: URL($auto);
+.innerSlide2{
+    background-image: URL($auto2);
 }
 
-#slide-3{
+.innerSlide3{
     background-image: URL($auto3);
 }
 
-#slide-4{
+.innerSlide4{
     background-image: URL($auto4);
 }
 
-#slide-5{
+.innerSlide5{
     background-image: URL($auto5);
 }
