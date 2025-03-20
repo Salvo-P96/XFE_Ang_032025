@@ -5,21 +5,59 @@ $auto3:"../../../assets/Auto3.png";
 $auto4:"../../../assets/Auto4.png";
 $auto5:"../../../assets/Auto5.png";
 
-.slider{
-    display: flex;
-    align-content: space-evenly;
-    //width portata al 100% secondo il commento in main.component.scss a riga 80.
-    width: 100%;
-    height: 300px;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+
+h3{
+    color: #FAF9F6;
 }
 
-.slide{
-    height: auto;
-    background-color:  #f6f6f6;
-    padding: 1rem;
-    outline: 10px solid #060606;
+.slider {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 300px;
+    overflow-x: hidden;
+    position: relative;
+    touch-action: pan-y;
+    appearance: none;
+  }
+  
+  .slide {
+    flex-shrink: 0;
+    height: fit-content;
+    background-color: #f6f6f6;
+    border-right: 5px solid #060606;
+    border-top: 5px solid #060606;
+    border-bottom: 5px solid #060606;
+    min-width: 200px;
+  }
+  
+  @keyframes scrollSlider {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .slider {
+    animation: scrollSlider 20s linear infinite;
+  }
+  
+  .slider .slide {
+    animation: none;
+    gap: 1rem;
+  }
+  
+#slideContainer{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    height: 90%;
+    width: fit-content;
+    padding: 0.5rem;
+    background-color: #f6f6f6;
 }
 
 #slideImg{
