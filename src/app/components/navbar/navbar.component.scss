@@ -6,7 +6,7 @@
 .navTop{
     display: flex;
     align-items: center;
-    align-content: center;
+    align-content: space-between;
     width: 100%;
     height: 4rem;
     background-color: #00000030;
@@ -28,3 +28,173 @@
     padding-right: 3rem;
     border-bottom: 1px solid #ffffff66;
 }
+
+.left{
+    width: 35%;
+}
+
+.inputCont{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+}
+
+.searchBar{
+    width: 70%;
+    border-radius: 20px;
+}
+
+.right{
+    width: 35%;
+}
+
+.loginBox{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    width: 30%; 
+}
+
+.login{
+    background-color: transparent;
+    width: 10%;
+    border-radius: 20px;
+    border:1px solid #ccc;
+    color: #f4f6e5;
+    height: 10%;
+}
+
+
+/*------------------------------------------------------------------*/
+/*------------------------------INPUT-------------------------------*/
+/*------------------------------------------------------------------*/
+
+$input-border: 1px solid #ccc;
+$ripple-color: rgb(255, 255, 255); // Change to your desired ripple color
+$ripple-duration: 0.6s; // Duration of the ripple animation
+
+.input-ripple {
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    border: $input-border;
+    outline: none;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+    outline: none;
+    color: #f4f6e5;
+
+  &:focus {
+    background-color: $ripple-color;
+    animation: ripple-focus $ripple-duration forwards;
+      color: #000;
+
+
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: $ripple-color;
+      transform: translateY(-50%);
+      animation: ripple-in $ripple-duration forwards;
+      z-index: 1;
+    }
+  }
+
+  &:not(:focus)::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: $ripple-color;
+    transform: translateY(-50%);
+    animation: ripple-out $ripple-duration forwards;
+    z-index: 1;
+  }
+}
+
+@keyframes ripple-in {
+  0% {
+    left: 0;
+    width: 0;
+  }
+  100% {
+    left: 0;
+    width: 100%;
+  }
+}
+
+@keyframes ripple-out {
+  0% {
+    right: 0;
+    width: 100%;
+  }
+  100% {
+    right: 0;
+    width: 0;
+  }
+}
+
+/*------------------------------------------------------------------*/
+/*--------------------------HamburgerMenu---------------------------*/
+/*------------------------------------------------------------------*/
+// 
+
+.hamburger {
+    position: relative;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+  
+    &::before, &::after, .line {
+      content: "";
+      display: block;
+      height: 2px;
+      width: 80%;
+      background: #ffd700;
+      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+      position: absolute;
+      left: 0;
+      border-radius: 2px;
+    }
+  
+    &::before {
+      top: 0;
+    }
+  
+    &::after {
+      bottom: 0;
+    }
+  
+    .line {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  
+    &:focus {
+      outline: none;
+  
+      &::before {
+        transform: translateY(9px) rotate(40deg);
+      }
+  
+      &::after {
+        transform: translateY(-9px) rotate(-40deg);
+      }
+  
+      .line {
+        opacity: 0;
+      }
+    }
+  }
+  
