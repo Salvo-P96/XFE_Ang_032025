@@ -1,3 +1,6 @@
+$logo1:"../../../assets/Logos/aston_martin.jpg";
+
+
 
 .grid-container {
     display: grid;
@@ -7,8 +10,8 @@
   }
   
   .grid-item img {
-    width: 100%;  
-    height: auto;
+    width: fit-content;  
+    height: fit-content;
     border: 1px solid #FAF9F6 ;
     background-color: #FFFFF0;
     border-radius: 8px;
@@ -18,4 +21,10 @@
 
   .grid-item img:hover{
     background-color: #EFEFE0;
+  }
+
+  .logo{
+    background-image: url($logo1);
+    background-repeat: no-repeat;
+    background-size: cover;
   }
