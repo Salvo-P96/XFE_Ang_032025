@@ -67,10 +67,23 @@
 
   .carouselBox{
     margin-top: 5rem;
-    height: 30rem;
+    /*
+    Qui hai messo la stessa altezza del componente filgio con classe sectionBox, nel file carousel.component.scss
+    Non è da fare. Anche qui, un'altezza fissa non si da al componente padre tranne per casi specifici.
+    
+    --- height: 30rem;
+    */
   }
 
   .sliderBox{
+    /*
+    In questo caso, essendo che ci sono più elementi all'interno dell'elemento padre, il contenitore
+    prende tutto lo spazio disponibile affinchè tutti i suoi figli siano al suo interno.
+    Per evitare ciò basta inserire la lunghezza massima del componente, quindi:
+    max-width: 100%;
+    Successivamente puoi dare la width al 100% allo slider.
+    */
+    max-width: 100%;
     margin-top: 3rem;
     height: 30rem;
   }
