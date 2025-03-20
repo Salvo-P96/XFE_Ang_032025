@@ -8,7 +8,8 @@ $auto5:"../../../assets/Auto5.png";
 .slider{
     display: flex;
     align-content: space-evenly;
-    width: 80%;
+    //width portata al 100% secondo il commento in main.component.scss a riga 80.
+    width: 100%;
     height: 300px;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;

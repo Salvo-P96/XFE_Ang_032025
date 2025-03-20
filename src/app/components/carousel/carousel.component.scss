@@ -3,7 +3,10 @@
     flex-direction: row;
     align-content: space-around;
     width: 100%;
+    /*
+    Il componente padre non deve avere un'altezza fissa
     height: 30rem;
+    */
 }   
     .caroContent{
         height: auto;
@@ -13,7 +16,12 @@
         background-size: cover;
     }
     .static{
+        /*
+        Qui hai dato un'altezza fissa, il che può andare bene ma nel caso in cui il contenuto sia un testo
+        come in questo caso, devi fare attenzione ad inserire un testo idoneo per lunghezza, in questo caso non va bene.
+        Puoì anche non specificare l'altezza e fare in modo che l'elemento si adatti al contenuto
         height: 26rem;
+        */
         width: 55%;
         padding: 2rem;
         background-color: #f6f8f4;
