@@ -7,7 +7,7 @@
 }
 
 .navbar{
-  position: absolute;
+  position: sticky;
   top: 0;
   left: 0;
   z-index: 200;
@@ -38,7 +38,7 @@
     align-content: center;
     height: 80rem;
     width: 100%;
-    padding-top: 2rem;
+    // padding-top: 2rem;
     background-color: #1A1A1A;
 }
 

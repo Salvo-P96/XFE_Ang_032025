@@ -56,6 +56,11 @@
     width: 30%; 
 }
 
+
+/*------------------------------------------------------------------*/
+/*------------------------------INPUT-------------------------------*/
+/*------------------------------------------------------------------*/
+
 .login{
     background-color: transparent;
     width: 10%;
@@ -63,7 +68,14 @@
     border:1px solid #ccc;
     color: #f4f6e5;
     height: 10%;
-}
+    transition: background-color 0.1s ease;
+
+    &:active {
+      background-color: #fff;
+      animation: 0.6s forwards;
+      color: #000;
+      }
+    }
 
 
 /*------------------------------------------------------------------*/
@@ -71,8 +83,8 @@
 /*------------------------------------------------------------------*/
 
 $input-border: 1px solid #ccc;
-$ripple-color: rgb(255, 255, 255); // Change to your desired ripple color
-$ripple-duration: 0.6s; // Duration of the ripple animation
+$ripple-color: #ffffff; 
+$ripple-duration: 0.6s;
 
 .input-ripple {
     position: relative;
@@ -87,7 +99,7 @@ $ripple-duration: 0.6s; // Duration of the ripple animation
 
   &:focus {
     background-color: $ripple-color;
-    animation: ripple-focus $ripple-duration forwards;
+    animation: $ripple-duration forwards;
       color: #000;
 
 
@@ -145,7 +157,7 @@ $ripple-duration: 0.6s; // Duration of the ripple animation
 /*------------------------------------------------------------------*/
 /*--------------------------HamburgerMenu---------------------------*/
 /*------------------------------------------------------------------*/
-// 
+
 
 .hamburger {
     position: relative;
@@ -197,4 +209,26 @@ $ripple-duration: 0.6s; // Duration of the ripple animation
       }
     }
   }
+
+/*------------------------------------------------------------------*/
+/*--------------------------HamburgerMenu---------------------------*/
+/*------------------------------------------------------------------*/
+ 
+
+ul{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  cursor: pointer;
+}
+
+ul li{
+  margin-right: 1rem;
+  color: #f4f6e5;
+}
+
+ul li:hover{
+  color: #d4d6c5;
+}
   

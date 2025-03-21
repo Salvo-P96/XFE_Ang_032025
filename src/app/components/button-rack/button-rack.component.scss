@@ -1,17 +1,27 @@
 $logo1:"../../../assets/Logos/aston_martin.jpg";
-
+$logo2:"../../../assets/Logos/audi.jpg";
+$logo3:"../../../assets/Logos/bentley.jpg";
+$logo4:"../../../assets/Logos/bmw.jpg";
+$logo5:"../../../assets/Logos/brabus.jpg";
+$logo6:"../../../assets/Logos/ferrari.jpg";
+$logo7:"../../../assets/Logos/ford.jpg";
+$logo8:"../../../assets/Logos/koenigsegg.jpg";
+$logo9:"../../../assets/Logos/lamborghini.jpg";
+$logo10:"../../../assets/Logos/maybach.jpg";
+$logo11:"../../../assets/Logos/mclaren.jpg";
+$logo12:"../../../assets/Logos/bugatti.jpg";
 
 
 .grid-container {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(2, auto); 
-    gap: 80% 20px;
+    gap: 2rem 3rem;
   }
   
-  .grid-item img {
-    width: fit-content;  
-    height: fit-content;
+  .grid-item{
+    width: 10rem;  
+    height: 6rem;
     border: 1px solid #FAF9F6 ;
     background-color: #FFFFF0;
     border-radius: 8px;
@@ -19,12 +29,92 @@ $logo1:"../../../assets/Logos/aston_martin.jpg";
     padding: 0.5rem;
   }
 
-  .grid-item img:hover{
+  .grid-item:hover{
     background-color: #EFEFE0;
   }
 
-  .logo{
+  .logo1{
     background-image: url($logo1);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: 20%;
   }
+
+  .logo2{
+    background-image: url($logo2);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 20%;
+  }
+
+  .logo3{
+    background-image: url($logo3);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 20%;
+  }
+
+  .logo4{
+    background-image: url($logo4);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 20%;
+  }
+  
+  .logo5{
+    background-image: url($logo5);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 20%;
+  }
+  
+  .logo6{
+    background-image: url($logo6);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 20%;
+  }
+  
+  .logo7{
+    background-image: url($logo7);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 20%;
+  }
+  .logo8{
+    background-image: url($logo8);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 20%;
+  }
+  
+  .logo9{
+    background-image: url($logo9);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 20%;
+  }
+  
+  .logo10{
+    background-image: url($logo10);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 20%;
+  }
+  
+  .logo11{
+    background-image: url($logo11);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 20%;
+  }
+  
+  .logo12{
+    background-image: url($logo12);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 20%;
+  }
+  
+  
+  
