@@ -4,19 +4,21 @@
     border: 0;
     font-family: heldane,prata,sans-serif;
     position: relative;
-}
-
-.navbar{
-  position: sticky;
-  top: 0;
-  left: 0;
-  z-index: 200;
-  width: 100%;
-}
-
-.parallax {
+  }
+  
+  .navbar{
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 200;
+    width: 100%;
+  }
+  
+  .parallax {
+    position: relative;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
+    justify-content: end;
     background-image: url('https://shorturl.at/xJBP0');
     height: 900px;
     background-attachment: fixed;
@@ -27,6 +29,9 @@
   }
 
   .parallaxTxt{
+    position: absolute;
+    top: 0%;
+    left: 40%;
     padding: 1rem;
     margin-left: 5rem;
   }
