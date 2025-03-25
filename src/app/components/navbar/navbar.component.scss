@@ -1,3 +1,7 @@
+*{
+  font-family: heldane,prata,sans-serif;
+}
+
 .navbody{
     width: 100%;
     display: flex;
@@ -32,8 +36,21 @@
 }
 
 .left{
+  display: flex;
+  align-items: center;
+  justify-content: left;
     width: 35%;
     padding-left: 3rem;
+}
+
+.left p{
+  margin-left: 2rem;
+  color: #f4f6e5;
+  cursor: pointer;
+}
+
+.left p:hover{
+  color: #d4d6c5;
 }
 
 .inputCont{
