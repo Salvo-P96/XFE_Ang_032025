@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, HostListener } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import {FormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
@@ -44,6 +44,23 @@ export class CustomBuildComponent {
     } 
   }
 
+  //-----------------------------------------------------
+  isMenuVisible = false;
+
+  toggleMenu(): void {
+    this.isMenuVisible = !this.isMenuVisible;
+  }
+
+  @HostListener('document:click', ['$event'])
+  closeMenuIfClickedOutside(event: MouseEvent): void {
+    const menu = document.querySelector('.dropdown-menu');
+    const button = document.querySelector('button');
+    
+    if (menu && !menu.contains(event.target as Node) && button && !button.contains(event.target as Node)) {
+      this.isMenuVisible = false;
+    }
+  }
+  //------------------------------------------------------
   // select(v:VariableBinding, s:string):void{
   //   const choice:HTMLElement|null= document.querySelector('choice');
   //   let selectedChoice = choice ? choice.innerHTML : null;

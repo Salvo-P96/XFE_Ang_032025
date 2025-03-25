@@ -6,10 +6,36 @@ body{
     height: 80%;
     background-color: #2A2A2A;
 }
-.mat-stepper-horizontal {
-    margin-top: 8px;
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
   }
   
-  .mat-mdc-form-field {
-    margin-top: 16px;
+  .dropdown-menu {
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .dropdown-menu ul li {
+    padding: 8px 16px;
+  }
+  
+  .dropdown-menu ul li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+  }
+  
+  .dropdown-menu ul li a:hover {
+    background-color: #ddd;
   }
