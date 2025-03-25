@@ -3,34 +3,37 @@
     display: flex;
     flex-direction: column;
 }
+
+//non collabora
 .navTop{
     display: flex;
     align-items: center;
-    align-content: space-between;
+    justify-content: space-between;
     width: 100%;
     height: 4rem;
-    background-color: #00000030;
+    background-color: #1A1A1A;
     color: #f4f6e5;
-    padding-left: 3rem;
-    padding-right: 3rem;
+    // padding-left: 3rem;
+    // padding-right: 3rem;
     border-bottom: 1px solid #ffffff66;
 }
 
 .navBottom{
     display: flex;
     align-items: center;
-    align-content: center;
+    justify-content: space-between;
     width: 100%;
     height: 2.5rem;
-    background-color: #00000030;
+    background-color: #1A1A1A;
     color: #f4f6e5;
-    padding-left: 3rem;
-    padding-right: 3rem;
+    // padding-left: 3rem;
+    // padding-right: 3rem;
     border-bottom: 1px solid #ffffff66;
 }
 
 .left{
     width: 35%;
+    padding-left: 3rem;
 }
 
 .inputCont{
@@ -234,3 +237,13 @@ ul li:hover{
   color: #d4d6c5;
 }
   
+
+.customBuild{
+  margin-right: 2rem;
+  color: #f4f6e5;
+  cursor: pointer;
+}
+
+.customBuild:hover{
+  color: #d4d6c5;
+}
