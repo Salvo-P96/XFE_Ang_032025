@@ -5,12 +5,14 @@
 
 
 
-    <button (click)="toggleMenu()">Mostra Menu</button>
+    <button class="brandMenu" (click)="toggleMenu()">Brand</button>
     <div id="dropdownMenu" class="dropdown-menu">
       <ul>
-        <li><a href="#">Opzione 1</a></li>
-        <li><a href="#">Opzione 2</a></li>
-        <li><a href="#">Opzione 3</a></li>
+        <li><button class="choice">RollsRoyce</button></li>
+        <li><button class="choice" disabled>Ferrari</button></li>
+        <li><button class="choice" disabled>Bugatti</button></li>
+        <li><button class="choice" disabled>Aston Martin</button></li>
+        <li><button class="choice" disabled>lamborghini</button></li>
       </ul>
     </div>
 

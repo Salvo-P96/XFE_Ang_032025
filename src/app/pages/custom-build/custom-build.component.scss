@@ -6,7 +6,7 @@ body{
     height: 80%;
     background-color: #2A2A2A;
 }
-button {
+.brandMenu {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
@@ -38,4 +38,9 @@ button {
   
   .dropdown-menu ul li a:hover {
     background-color: #ddd;
+  }
+
+  .choice{
+    border: none;
+    background-color: transparent;
   }
