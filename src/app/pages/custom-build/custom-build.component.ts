@@ -42,6 +42,11 @@ export class CustomBuildComponent {
     console.log(menu)
   }
 
-  brand:string ="";
+  brand:string 
+  
+  
+  
+  
+  ="";
 
 }
