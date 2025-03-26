@@ -13,7 +13,23 @@ $logo12:"../../../assets/Logos/bugatti.jpg";
 
 
 .grid-container {
+<<<<<<< HEAD
     display: flex;
+=======
+  /*
+  Il display grid non si adatta bene per il responsive, quindi per casi come questo è meglio
+  utilizzare il display: flex;
+  va inoltre rivista la gestione degli spazi, sostituire tutto con:
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem 3rem; (per il gap devi gestirlo a seconda dello spaziamento che vuoi)
+  */
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, auto); 
+>>>>>>> a0a1059904bf0fd02fb69a24dde28df94763f458
     gap: 2rem 3rem;
     flex-wrap: wrap;
     align-items: center;
