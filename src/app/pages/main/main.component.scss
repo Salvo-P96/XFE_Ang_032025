@@ -29,6 +29,15 @@
   }
 
   .parallaxTxt{
+    /*
+    Non si centra così, è un aborto.
+    sostituire tutto con:
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 1rem;
+    */
     position: absolute;
     top: 0%;
     left: 40%;
