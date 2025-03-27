@@ -30,20 +30,10 @@
   }
 
   .parallaxTxt{
-    /*
-    Non si centra così, è un aborto.
-    sostituire tutto con:
     position: absolute;
     top: 0%;
     left: 50%;
     transform: translate(-50%, 0);
-    padding: 1rem;
-    */
-    position: absolute;
-    top: 0%;
-    left: 45%;
-    // padding: 1rem;
-    // margin-left: 5rem;
   }
 
 .content{
@@ -53,7 +43,7 @@
     align-content: center;
     height: 80rem;
     width: 100%;
-    // padding-top: 2rem;
+    padding-top: 2rem;
     background-color: #1A1A1A;
 }
 
