@@ -1,4 +1,4 @@
-export class Customcar{
+export class customCar{
     public brand?:string;
     public model?:string;
     public configuration?:string;

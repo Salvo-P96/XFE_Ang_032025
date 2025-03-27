@@ -3,7 +3,7 @@
 
 
 
-    <button class="brandMenu" (click)="toggleMenu()">Brand</button>
+    <!-- <button class="brandMenu" (click)="toggleMenu()">Brand</button>
     <div id="dropdownMenu" class="dropdown-menu">
       <ul>
         <li><button class="choice">RollsRoyce</button></li>
@@ -13,16 +13,18 @@
         <li><button class="choice" disabled>Lamborghini</button></li>
       </ul>
     </div>
+    -->
+    <form [formGroup]="carForm" (ngSubmit)="submit()">
 
     <mat-form-field>
-      <mat-label>Select a brand</mat-label>
-      <mat-select [(ngModel)]="brand" [formControl]="selectFormControl" required >
-        <mat-option [value]="brand">--</mat-option>
-        <mat-option [value]="brand">RollsRoyce</mat-option>
-        <mat-option [value]="brand">Ferrari</mat-option>
-        <mat-option [value]="brand">Bugatti</mat-option>
-        <mat-option [value]="brand">Aston Martin</mat-option>
-        <mat-option [value]="brand">Lamborghini</mat-option>
+      <mat-label for="brand">Select a brand</mat-label>
+      <mat-select formControlName="brand" required>
+        <mat-option value="">--</mat-option>
+        <mat-option value="RollsRoyce">RollsRoyce</mat-option>
+        <mat-option value="Ferrari">Ferrari</mat-option>
+        <mat-option value="Bugatti">Bugatti</mat-option>
+        <mat-option value="Aston Martin">Aston Martin</mat-option>
+        <mat-option value="Lamborghini">Lamborghini</mat-option>
       </mat-select>
       @if (selectFormControl.hasError('required')) {
         <mat-error>Please choose a brand</mat-error>
@@ -30,6 +32,20 @@
       <button (click)="test()">Testa il valore</button>
     </mat-form-field>
 
+
+        <label for="brand">Select a brand</label>
+        <select formControlName="brand" required >
+          <option  value="">--</option>
+          <option value="RollsRoyce">RollsRoyce</option>
+          <option value="Ferrari">Ferrari</option>
+          <option value="Bugatti">Bugatti</option>
+          <option value="Aston Martin">Aston Martin</option>
+          <option value="Lamborghini">Lamborghini</option>
+        </select>
+          <div *ngIf="carForm.controls['brand'].invalid && carForm.controls['brand'].touched">Please choose a brand</div>
+        <button (click)="test()">Testa il valore</button>
+
+    </form>
 
   </div>
 </body>
