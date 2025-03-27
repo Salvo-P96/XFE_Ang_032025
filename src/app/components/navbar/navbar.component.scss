@@ -39,7 +39,7 @@
   display: flex;
   align-items: center;
   justify-content: left;
-    width: 35%;
+    // width: 35%; lunghezza non necessaria
     padding-left: 3rem;
 }
 
@@ -61,7 +61,7 @@
 }
 
 .searchBar{
-    width: 70%;
+    width: 40%; // sistemata la lunghezza perchè eccessiva
     border-radius: 20px;
 }
 
@@ -85,12 +85,14 @@
 
 .login{
     background-color: transparent;
-    width: 10%;
+    // width: 10%; tolta la lunghezza
     border-radius: 20px;
+    padding: 10px 25px; //per gestire le dimensioni dei pulsanti, puoi usare il padding
     border:1px solid #ccc;
     color: #f4f6e5;
-    height: 50%;
+//    height: 50%; tolta l'altezza
     transition: background-color 0.1s ease;
+    margin-right: 3rem; //margine aggiunto per spostare il componente dal bordo come il componente di sinistra
 
     &:active {
       background-color: #fff;
