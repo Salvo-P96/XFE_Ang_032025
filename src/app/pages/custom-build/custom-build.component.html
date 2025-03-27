@@ -17,16 +17,17 @@
     <mat-form-field>
       <mat-label>Select a brand</mat-label>
       <mat-select [(ngModel)]="brand" [formControl]="selectFormControl" required >
-        <mat-option value=" ">--</mat-option>
-        <mat-option value="RollsRoyce">RollsRoyce</mat-option>
-        <mat-option value="Ferrari">Ferrari</mat-option>
-        <mat-option value="Bugatti">Bugatti</mat-option>
-        <mat-option value="Aston Martin">Aston Martin</mat-option>
-        <mat-option value="Lamborghini">Lamborghini</mat-option>
+        <mat-option [value]="brand">--</mat-option>
+        <mat-option [value]="brand">RollsRoyce</mat-option>
+        <mat-option [value]="brand">Ferrari</mat-option>
+        <mat-option [value]="brand">Bugatti</mat-option>
+        <mat-option [value]="brand">Aston Martin</mat-option>
+        <mat-option [value]="brand">Lamborghini</mat-option>
       </mat-select>
       @if (selectFormControl.hasError('required')) {
         <mat-error>Please choose a brand</mat-error>
       }
+      <button (click)="test()">Testa il valore</button>
     </mat-form-field>
 
 

@@ -41,7 +41,9 @@ export class CustomBuildComponent {
     menu?.classList.toggle('show');
     console.log(menu)
   }
-
+  test(){
+    console.log(this.selectFormControl.value)
+  }
   brand:string="";
 
   logger():void{
