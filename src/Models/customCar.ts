@@ -3,13 +3,12 @@ export class customCar{
     public model?:string;
     public configuration?:string;
     public fuel?:string;
-    public setup?:string;
     
     
     public color?:string;
     public finish?:string;
     public rimType?:string;
-    public rimSize?:number;
+    public rimSize?:string;
     
 
     public seatMaterial?:string;

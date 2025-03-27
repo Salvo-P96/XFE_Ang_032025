@@ -1,53 +1,197 @@
 <body>
   <div class="centralCard">
-
-
-
-    <!-- <button class="brandMenu" (click)="toggleMenu()">Brand</button>
-    <div id="dropdownMenu" class="dropdown-menu">
-      <ul>
-        <li><button class="choice">RollsRoyce</button></li>
-        <li><button class="choice" disabled>Ferrari</button></li>
-        <li><button class="choice" disabled>Bugatti</button></li>
-        <li><button class="choice" disabled>Aston Martin</button></li>
-        <li><button class="choice" disabled>Lamborghini</button></li>
-      </ul>
-    </div>
-    -->
     <form [formGroup]="carForm" (ngSubmit)="submit()">
-
-    <mat-form-field>
-      <mat-label for="brand">Select a brand</mat-label>
-      <mat-select formControlName="brand" required>
-        <mat-option value="">--</mat-option>
-        <mat-option value="RollsRoyce">RollsRoyce</mat-option>
-        <mat-option value="Ferrari">Ferrari</mat-option>
-        <mat-option value="Bugatti">Bugatti</mat-option>
-        <mat-option value="Aston Martin">Aston Martin</mat-option>
-        <mat-option value="Lamborghini">Lamborghini</mat-option>
-      </mat-select>
-      @if (selectFormControl.hasError('required')) {
+      <!-- -------------------Brand--------------------- -->
+      <mat-form-field>
+        <mat-label for="brand">Select a brand</mat-label>
+        <mat-select formControlName="brand" required>
+          <mat-option value="">--</mat-option>
+          <mat-option value="RollsRoyce">RollsRoyce</mat-option>
+          <mat-option value="Ferrari" disabled>Ferrari</mat-option>
+          <mat-option value="Bugatti" disabled>Bugatti</mat-option>
+          <mat-option value="Aston Martin" disabled>Aston Martin</mat-option>
+          <mat-option value="Lamborghini" disabled>Lamborghini</mat-option>
+        </mat-select>
+        @if (selectFormControl.hasError('required')) {
         <mat-error>Please choose a brand</mat-error>
-      }
-      <button (click)="test()">Testa il valore</button>
-    </mat-form-field>
+        }
+      </mat-form-field>
+      <!-- -------------------Model--------------------- -->
+      <mat-form-field>
+        <mat-label for="model">Select a model</mat-label>
+        <mat-select formControlName="model" required>
+          <mat-option value="">--</mat-option>
+          <mat-option value="Phantom">Phantom</mat-option>
+          <mat-option value="Spectre">Spectre</mat-option>
+          <mat-option value="Cullian">Cullian</mat-option>
+          <mat-option value="Ghost">Ghost</mat-option>
+        </mat-select>
+        @if (selectFormControl.hasError('required')) {
+        <mat-error>Please choose a model</mat-error>
+        }
+      </mat-form-field>
+      <!-- -------------------Configurations--------------------- -->
+      <mat-form-field>
+        <mat-label for="configuration">Select a configuration</mat-label>
+        <mat-select formControlName="configuration" required>
+          <mat-option value="">--</mat-option>
+          <mat-option value="Black Badge">Black Badge</mat-option>
+          <mat-option value="Super Sport">Super Sport</mat-option>
+          <mat-option value="Deluxe">Deluxe</mat-option>
+        </mat-select>
+        @if (selectFormControl.hasError('required')) {
+        <mat-error>Please choose a configuration</mat-error>
+        }
+      </mat-form-field>
+      <!-- -------------------Fuel--------------------- -->
+      <mat-form-field>
+        <mat-label for="fuel">Select a fuel</mat-label>
+        <mat-select formControlName="fuel" required>
+          <mat-option value="">--</mat-option>
+          <mat-option value="Gasoline">Gasoline</mat-option>
+          <mat-option value="Diesel">Diesel</mat-option>
+          <mat-option value="Electric">Electric</mat-option>
+        </mat-select>
+        @if (selectFormControl.hasError('required')) {
+        <mat-error>Please choose a fuel</mat-error>
+        }
+      </mat-form-field>
+      <!-- -------------------Colors--------------------- -->
+      <mat-form-field>
+        <mat-label for="color">Select a color</mat-label>
+        <mat-select formControlName="color" required>
+          <mat-option value="">--</mat-option>
+          <mat-option value="Vapour Violet">Vapour Violet</mat-option>
+          <mat-option value="Black Diamond">Black Diamond</mat-option>
+          <mat-option value="English White">English White</mat-option>
+          <mat-option value="Magma Red">Magma Red</mat-option>
+          <mat-option value="Imperial Jade">Imperial Jade</mat-option>
+        </mat-select>
+        @if (selectFormControl.hasError('required')) {
+        <mat-error>Please choose a color</mat-error>
+        }
+      </mat-form-field>
+      <!-- -------------------Finish--------------------- -->
+      <mat-form-field>
+        <mat-label for="finish">Select a finish</mat-label>
+        <mat-select formControlName="finish" required>
+          <mat-option value="">--</mat-option>
+          <mat-option value="Crystal">Crystal</mat-option>
+          <mat-option value="Metallic">Metallic</mat-option>
+          <mat-option value="Matte">Matte</mat-option>
+          <mat-option value="Pearlescent">Pearlescent</mat-option>
+        </mat-select>
+        @if (selectFormControl.hasError('required')) {
+        <mat-error>Please choose a finish</mat-error>
+        }
+      </mat-form-field>
+      <!-- -------------------RimType--------------------- -->
+      <mat-form-field>
+        <mat-label for="rimType">Select the wheels rim</mat-label>
+        <mat-select formControlName="rimType" required>
+          <mat-option value="">--</mat-option>
+          <mat-option value="All black">All black</mat-option>
+          <mat-option value="Color Contrast">Color Contrast</mat-option>
+          <mat-option value="Led Illuminated">Led Illuminated</mat-option>
+        </mat-select>
+        @if (selectFormControl.hasError('required')) {
+        <mat-error>Please choose a rim</mat-error>
+        }
+      </mat-form-field>
+      <!-- -------------------RimSize--------------------- -->
+      <mat-form-field>
+        <mat-label for="rimSize">Select the wheels size</mat-label>
+        <mat-select formControlName="rimSize" required>
+          <mat-option value="">--</mat-option>
+          <mat-option value='23"'>23"</mat-option>
+          <mat-option value='24"'>24"</mat-option>
+          <mat-option value='26"'>26"</mat-option>
+        </mat-select>
+        @if (selectFormControl.hasError('required')) {
+        <mat-error>Please choose a size</mat-error>
+        }
+      </mat-form-field>
+      <!-- -------------------SeatMaterials--------------------- -->
+      <mat-form-field>
+        <mat-label for="seatMaterial">Select the seat material</mat-label>
+        <mat-select formControlName="seatMaterial" required>
+          <mat-option value="">--</mat-option>
+          <mat-option value="Leather">Leather</mat-option>
+          <mat-option value="Micro Fiber">Micro Fiber</mat-option>
+          <mat-option value="Alcantara">Alcantara</mat-option>
+        </mat-select>
+        @if (selectFormControl.hasError('required')) {
+        <mat-error>Please choose a seat material</mat-error>
+        }
+      </mat-form-field>
+      <!-- -------------------SeatColor--------------------- -->
+      <mat-form-field>
+        <mat-label for="seatColor">Select the seat color</mat-label>
+        <mat-select formControlName="seatColor" required>
+          <mat-option value="">--</mat-option>
+          <mat-option value="Black">Black</mat-option>
+          <mat-option value="Dark Leather">Dark Leather</mat-option>
+          <mat-option value="Beige">Beige</mat-option> 
+        </mat-select>
+        @if (selectFormControl.hasError('required')) {
+        <mat-error>Please choose a seat color</mat-error>
+        }
+      </mat-form-field>
+      <!-- -------------------UpholsteryColor--------------------- -->
+      <mat-form-field>
+        <mat-label for="upholsteryColor">Select the upholstery color</mat-label>
+        <mat-select formControlName="upholsteryColor" required>
+          <mat-option value="">--</mat-option>
+          <mat-option value="Lambwool white">Lambwool white</mat-option>
+          <mat-option value="Black">Black</mat-option>
+          <mat-option value="Beige">Beige</mat-option> 
+        </mat-select>
+        @if (selectFormControl.hasError('required')) {
+        <mat-error>Please choose a upholstery color</mat-error>
+        }
+      </mat-form-field>
+      <!-- -------------------trimType--------------------- -->
+      <mat-form-field>
+        <mat-label for="trimType">Select the trim</mat-label>
+        <mat-select formControlName="trimType" required>
+          <mat-option value="">--</mat-option>
+          <mat-option value="Cherry wood">Cherry wood</mat-option>
+          <mat-option value="MahoganyCarbon fiber">MahoganyCarbon fiber</mat-option>
+          <mat-option value="Carbon fiber">Carbon fiber</mat-option> 
+          <mat-option value="Leather">Leather</mat-option>
+          <mat-option value="Marble">Marble</mat-option>
+        </mat-select>
+        @if (selectFormControl.hasError('required')) {
+        <mat-error>Please choose a trim</mat-error>
+        }
+      </mat-form-field>
+      <!-- -------------------DisplaySize--------------------- -->
+      <mat-form-field>
+        <mat-label for="DisplaySize">Select the display size</mat-label>
+        <mat-select formControlName="DisplaySize" required>
+          <mat-option value="">--</mat-option>
+          <mat-option value='17"'>17"</mat-option>
+          <mat-option value='20"'>20"</mat-option>
+          <mat-option value='22"'>22"</mat-option> 
+        </mat-select>
+        @if (selectFormControl.hasError('required')) {
+        <mat-error>Please choose a size</mat-error>
+        }
+      </mat-form-field>
+      <!-- -------------------DisplayHeadsUp--------------------- -->
 
+      
+      
+      <!-- -------------------Autopilot--------------------- -->
 
-        <label for="brand">Select a brand</label>
-        <select formControlName="brand" required >
-          <option  value="">--</option>
-          <option value="RollsRoyce">RollsRoyce</option>
-          <option value="Ferrari">Ferrari</option>
-          <option value="Bugatti">Bugatti</option>
-          <option value="Aston Martin">Aston Martin</option>
-          <option value="Lamborghini">Lamborghini</option>
-        </select>
-          <div *ngIf="carForm.controls['brand'].invalid && carForm.controls['brand'].touched">Please choose a brand</div>
-        <button (click)="test()">Testa il valore</button>
-
+      <button (click)="test()">Test</button>
     </form>
-
   </div>
 </body>
 
-
+<!-- 
+<mat-option value="">--</mat-option>
+<mat-option value=""></mat-option>
+<mat-option value=""></mat-option>
+<mat-option value=""></mat-option> 
+-->

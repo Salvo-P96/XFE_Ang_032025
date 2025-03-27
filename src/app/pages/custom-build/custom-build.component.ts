@@ -6,7 +6,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { VariableBinding } from '@angular/compiler';
-import { customCar } from '../../../Models/CustomCar';
+import { customCar } from '../../../Models/customCar';
 
 @Component({
   selector: 'app-custom-build',
@@ -24,6 +24,8 @@ import { customCar } from '../../../Models/CustomCar';
 })
 export class CustomBuildComponent {
   
+  // customBuild = new customCar();
+
   carForm: FormGroup;
 
   selectFormControl = new FormControl('', Validators.required);
@@ -32,7 +34,22 @@ export class CustomBuildComponent {
     this.carForm = new FormGroup({
       brand: new FormControl('', [Validators.required]), 
       model: new FormControl('', [Validators.required]),  
-      engineType: new FormControl('', [Validators.required])
+      configuration: new FormControl('', [Validators.required]),
+      fuel: new FormControl('', [Validators.required]), 
+
+      color: new FormControl('', [Validators.required]),
+      finish: new FormControl('', [Validators.required]),
+      rimType: new FormControl('', [Validators.required]),
+      rimSize: new FormControl('', [Validators.required]),
+
+      seatMaterial: new FormControl('', [Validators.required]),
+      seatColor: new FormControl('', [Validators.required]),
+      upholsteryColor: new FormControl('', [Validators.required]),
+      trimType: new FormControl('', [Validators.required]),
+
+      displaySize: new FormControl('', [Validators.required]),
+      displayHeadsUp: new FormControl('', [Validators.required]),
+      autopilot: new FormControl('', [Validators.required])
     });
   }
    
