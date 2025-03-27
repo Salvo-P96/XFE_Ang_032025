@@ -44,4 +44,8 @@ export class CustomBuildComponent {
 
   brand:string="";
 
+  logger():void{
+    console.log(this.brand);
+  }
+
 }
