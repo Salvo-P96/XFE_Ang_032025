@@ -1,24 +1,34 @@
 <div class="navBody">
-    <div class="navTop">
-        <div class="left">
-            <button class="hamburger">
-                <div class="line"></div>
-            </button>
-            <p class="home" (click)="goTo('')">Home</p>
-            <div class="logo"></div>
-        </div>
-        <input type=text placeholder="Search..." name="search" class="searchBar input-ripple">
-        <button class="login">login</button>
+  <div class="navTop">
+    <div class="left">
+      <button class="hamburger">
+        <div class="line"></div>
+      </button>
+      <p class="home" (click)="goTo('')">Home</p>
+      <div class="logo"></div>
     </div>
-    <div class="navBottom"> 
-        <ul>
-            <li class="popBrand">Rolls Royce</li>
-            <li class="popBrand">Lamborghini</li>
-            <li class="popBrand">Ferrari</li>
-            <li class="popBrand">Aston Martin</li>
-            <li class="popBrand">Bugatti</li>
-        </ul>
+    <input
+      type="text"
+      placeholder="Search..."
+      name="search"
+      class="searchBar input-ripple"
+    />
+    <button class="login">login</button>
+  </div>
+  <div class="navBottom">
+    <ul>
+      <li class="popBrand">Rolls Royce</li>
+      <li class="popBrand">Lamborghini</li>
+      <li class="popBrand">Ferrari</li>
+      <li class="popBrand">Aston Martin</li>
+      <li class="popBrand">Bugatti</li>
+    </ul>
 
-        <p class="customBuild" (click)="goTo('app-custom-build')">Customize you dream</p>
+    <div class="customizeContainer">
+        <div *ngIf="showSummary">
+            <p class="summary" (click)="goTo('app-summary')">Summary</p>
+        </div>
+      <p class="customBuild" (click)="goTo('app-custom-build')">Customize you dream</p>
     </div>
+  </div>
 </div>

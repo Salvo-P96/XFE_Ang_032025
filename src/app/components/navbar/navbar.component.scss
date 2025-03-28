@@ -231,6 +231,9 @@ $ripple-duration: 0.6s;
 /*--------------------------HamburgerMenu---------------------------*/
 /*------------------------------------------------------------------*/
  
+.customizeContainer{
+  display: flex;
+}
 
 ul{
   display: flex;
@@ -257,5 +260,15 @@ ul li:hover{
 }
 
 .customBuild:hover{
+  color: #d4d6c5;
+}
+
+.summary{
+  margin-right: 2rem;
+  color: #f4f6e5;
+  cursor: pointer;
+}
+
+.summary:hover{
   color: #d4d6c5;
 }

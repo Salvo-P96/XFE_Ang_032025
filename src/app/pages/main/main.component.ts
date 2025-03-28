@@ -17,6 +17,8 @@ import { NavbarComponent } from '../../components/navbar/navbar.component';
 })
 export class MainComponent {
 
+  showSummaryNav:boolean=false;
+
   constructor(private router: Router, private route: ActivatedRoute) {}
     
   ngOnInit(): void {
@@ -26,5 +28,6 @@ export class MainComponent {
       element.style.display='none';
     } 
   }
+
 
 }

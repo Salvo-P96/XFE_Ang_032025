@@ -156,7 +156,7 @@
         <mat-select formControlName="trimType" required>
           <mat-option value="">--</mat-option>
           <mat-option value="Cherry wood">Cherry wood</mat-option>
-          <mat-option value="MahoganyCarbon fiber">MahoganyCarbon fiber</mat-option>
+          <mat-option value="Mahogany">Mahogany</mat-option>
           <mat-option value="Carbon fiber">Carbon fiber</mat-option> 
           <mat-option value="Leather">Leather</mat-option>
           <mat-option value="Marble">Marble</mat-option>
@@ -167,8 +167,8 @@
       </mat-form-field>
       <!-- -------------------DisplaySize--------------------- -->
       <mat-form-field>
-        <mat-label for="DisplaySize">Select the display size</mat-label>
-        <mat-select formControlName="DisplaySize" required>
+        <mat-label for="displaySize">Select the display size</mat-label>
+        <mat-select formControlName="displaySize" required>
           <mat-option value="">--</mat-option>
           <mat-option value='17"'>17"</mat-option>
           <mat-option value='20"'>20"</mat-option>
@@ -180,11 +180,15 @@
       </mat-form-field>
       <!-- -------------------DisplayHeadsUp--------------------- -->
 
-      
+      <input type="checkbox" formControlName="displayHeadsUp" id="displayHeadsUp"  />
+    <label for="displayHeadsUp">Display headsUp?</label>
       
       <!-- -------------------Autopilot--------------------- -->
+      <input type="checkbox" formControlName="autopilot" id="autopilot"  />
+      <label for="autopilot">Autopilot?</label>
 
       <button (click)="test()">Test</button>
+      <button (click)="submit()">Submit</button>
     </form>
   </div>
 </body>
@@ -195,3 +199,5 @@
 <mat-option value=""></mat-option>
 <mat-option value=""></mat-option> 
 -->
+
+<!-- (change)="onTermsChange()" -->
