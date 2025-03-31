@@ -24,10 +24,17 @@ export class SummaryComponent {
   ngOnInit(): void {
       this.carBuild= JSON.parse(sessionStorage.getItem("carBuild")!);
   }
-
+//-----------------------------Sistemare la funzione--------------------------------//
   isDHU(): string {
-    const isActive:string = this.carBuild.displayHeadsUp ? 'Yes' : 'No'
-    return isActive
+    const isActive:boolean = this.carBuild.displayHeadsUp!
+    console.log(isActive)
+    let response:string;
+    if (isActive){
+      response="Yes"
+    } else{
+      response = "No"
+    }
+    return response
   }
 
 }
