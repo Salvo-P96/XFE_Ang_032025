@@ -3,10 +3,34 @@
 
     <div *ngIf="carBuild">
         <h3>Dettagli Preventivo</h3>
-        <p>Car Model: {{ carBuild.brand }}</p>
-        <p>Car Model: {{ carBuild.model }}</p>
-        <p>Car Model: {{ carBuild.configuration }}</p>
-        <p>Car Model: {{ carBuild.fuel }}</p>
+        <div class="generics">
+           
+           <p>Car Brand: {{ carBuild.brand }}</p>
+           <p>Car Model: {{ carBuild.model }}</p>
+           <p>Car Configuration: {{ carBuild.configuration }}</p>
+           <p>Car Fuel: {{ carBuild.fuel }}</p>
+        
+         </div>
+         <div class="exteriors">
+            <p>Color:{{carBuild.color}}</p>
+            <p>Finish:{{carBuild.finish}}</p>
+            <p>Rim type:{{carBuild.rimType}}</p>
+            <p>Rim size:{{carBuild.rimSize}}</p>
+         </div>
+
+         <div class="interiors">
+            <p>Seat material:{{carBuild.seatMaterial}}</p>
+            <p>Seat color:{{carBuild.seatColor}}</p>
+            <p>Upholstery:{{carBuild.upholsteryColor}}</p>
+            <p>Trim:{{carBuild.trimType}}</p>
+         </div>
+
+         <div class="tech">
+            <p>displaySize:{{carBuild.displaySize}}</p>
+            <p>Display HeadsUp:{{isDHU()}}</p>
+            <p>Autopilot: {{carBuild.autopilot ? "yes" : "No" }}</p>
+
+         </div>
 
       </div>
 

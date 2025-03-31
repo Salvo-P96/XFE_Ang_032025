@@ -31,7 +31,6 @@ import { customCar } from '../../../Models/customCar';
   styleUrl: './custom-build.component.scss',
 })
 export class CustomBuildComponent {
-  // customBuild = new customCar();
 
   carForm: FormGroup;
 
@@ -98,7 +97,10 @@ export class CustomBuildComponent {
       build.autopilot=this.carForm.value.autopilot
 
       console.log(build);
-      this.eventService.setCarbuild(build)
+      if(sessionStorage.getItem("carBuild")){
+        sessionStorage.removeItem("carBuild")
+      }
+      sessionStorage.setItem("carBuild",JSON.stringify(build))
     } else {
       console.log("Invalid");
     }
