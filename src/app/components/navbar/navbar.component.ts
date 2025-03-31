@@ -36,35 +36,3 @@ export class NavbarComponent {
 }
 
 
-// import { Component, OnInit, OnDestroy } from '@angular/core';
-// import { CarQuotationService } from './car-quotation.service';  // Importa il servizio
-// import { Subscription } from 'rxjs';
-// import { CarQuotation } from './car-quotation.model';  // Importa il modello
-
-// @Component({
-//   selector: 'app-car-summary',
-//   templateUrl: './car-summary.component.html',
-//   styleUrls: ['./car-summary.component.css']
-// })
-// export class CarSummaryComponent implements OnInit, OnDestroy {
-//   carQuotation: CarQuotation;
-//   private subscription: Subscription;
-
-//   constructor(private carQuotationService: CarQuotationService) {}
-
-//   ngOnInit(): void {
-//     // Sottoscrivi all'oggetto emesso dal servizio
-//     this.subscription = this.carQuotationService.carQuotation$.subscribe(
-//       (quotation) => {
-//         this.carQuotation = quotation;  // Assegna l'oggetto ricevuto
-//       }
-//     );
-//   }
-
-//   ngOnDestroy() {
-//     // Cancella la sottoscrizione per evitare memory leaks
-//     if (this.subscription) {
-//       this.subscription.unsubscribe();
-//     }
-//   }
-// }
