@@ -10,7 +10,9 @@
 .centralCard{
   width:60vw;
   height: 70vh;
-  background-color: #4A4A4A;
+  background-color: #D7d7d7;
+  border: 1px solid #2a2a2a;
+  border-radius: 5px;
 
 }
 .brandMenu {
@@ -56,4 +58,47 @@
 mat-from-field{
   margin: 1rem ;
   width: 20vw ;
+}
+
+.formCont{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding: 2rem;
+  // justify-content: center;
+}
+
+.categories{
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.techs{
+  justify-content: start;
+}
+
+.submit{
+  width: 20%;
+  border-radius: 20px;
+  padding: 0.6rem 1rem;
+  border: 1px solid #2A2A2A;
+}
+
+.submit:active{
+  background-color: #dadada;
+  box-shadow:inset 0 0 3px #000000;
+}
+
+.checkBoxs{
+  color: #1a1a1a;
+  width: 33%;
+  margin-left: 4.3vw;
+}
+
+.checkBoxs input{
+  margin-right: 5px;
 }

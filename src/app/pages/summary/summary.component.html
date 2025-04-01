@@ -1,38 +1,41 @@
-<body>
+<div class="bodyCont">
    <div class="centralCard">
 
-    <div *ngIf="carBuild">
+    <div *ngIf="carBuild" class="buildTxt">
         <h3>Dettagli Preventivo</h3>
-        <div class="generics">
-           
-           <p>Car Brand: {{ carBuild.brand }}</p>
-           <p>Car Model: {{ carBuild.model }}</p>
-           <p>Car Configuration: {{ carBuild.configuration }}</p>
-           <p>Car Fuel: {{ carBuild.fuel }}</p>
+        <div class="generics categories">
+           <p class="title">Car Generics:</p>
+           <p>Brand:  {{ carBuild.brand }}</p>
+           <p>Model:  {{ carBuild.model }}</p>
+           <p>Configuration:  {{ carBuild.configuration }}</p>
+           <p>Fuel:  {{ carBuild.fuel }}</p>
         
          </div>
-         <div class="exteriors">
-            <p>Color:{{carBuild.color}}</p>
-            <p>Finish:{{carBuild.finish}}</p>
-            <p>Rim type:{{carBuild.rimType}}</p>
-            <p>Rim size:{{carBuild.rimSize}}</p>
+         <div class="exteriors  categories">
+            <p class="title"></p>
+            <p>Color:  {{carBuild.color}}</p>
+            <p>Finish:  {{carBuild.finish}}</p>
+            <p>Rim type:  {{carBuild.rimType}}</p>
+            <p>Rim size:  {{carBuild.rimSize}}</p>
          </div>
 
-         <div class="interiors">
-            <p>Seat material:{{carBuild.seatMaterial}}</p>
-            <p>Seat color:{{carBuild.seatColor}}</p>
-            <p>Upholstery:{{carBuild.upholsteryColor}}</p>
-            <p>Trim:{{carBuild.trimType}}</p>
+         <div class="interiors  categories">
+            <p class="title"></p>
+            <p>Seat material:  {{carBuild.seatMaterial}}</p>
+            <p>Seat color:  {{carBuild.seatColor}}</p>
+            <p>Upholstery:  {{carBuild.upholsteryColor}}</p>
+            <p>Trim:  {{carBuild.trimType}}</p>
          </div>
 
-         <div class="tech">
-            <p>displaySize:{{carBuild.displaySize}}</p>
-            <p>Display HeadsUp:{{carBuild.displayHeadsUp? "Yes" : "No"}}</p>
-            <p>Autopilot: {{carBuild.autopilot? "Yes" : "No"}}</p>
+         <div class="tech categories">
+            <p class="title"></p>
+            <p>displaySize:  {{carBuild.displaySize}}</p>
+            <p>Display HeadsUp:  {{carBuild.displayHeadsUp? "Yes" : "No"}}</p>
+            <p>Autopilot:  {{carBuild.autopilot? "Yes" : "No"}}</p>
 
          </div>
 
       </div>
 
    </div> 
-</body>
+</div>

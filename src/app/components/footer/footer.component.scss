@@ -10,8 +10,19 @@ footer{
 }
 
 .rights{
+    display: flex;  
     width: 50vw;
     padding-left: 300px;
+}
+.rights p{
+    font-size: 12px;
+    padding-right: 1.5rem;
+    padding-top: 6px;
+}
+
+.rights p:hover{
+    cursor: pointer;
+    color: #c4c5be;
 }
 
 .logo{
