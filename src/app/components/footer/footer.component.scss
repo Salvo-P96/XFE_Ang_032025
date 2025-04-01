@@ -1,18 +1,25 @@
 body{
+    display: flex;
+    align-items: center;
     width: 100%;
     background-color: #1A1A1A;
     color: #f4f6e5;
-    height:10vh;
+    height:12vh;
     border-top: 1px solid #ffffff66;
 
 }
 
+.rights{
+    width: 50vw;
+    padding-left: 300px;
+}
+
 .logo{
-    width: 200px;
-    height: fit-content;
-    background-image: url("C:/VSC/AngularPRJ/AngularPRJ-01/src/assets/LuxarLogo/LuxarLogo3.png");
-    background-attachment: fixed;
+    width: 50vw;
+    height: 80%;
+    background-image: url("../../../assets/LuxarLogo/LuxarLogo3.PNG");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size:contain;
+    padding-right: 300px;
 }

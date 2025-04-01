@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, Renderer2 } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ButtonRackComponent } from '../../components/button-rack/button-rack.component';
 import { CarouselComponent } from '../../components/carousel/carousel.component';

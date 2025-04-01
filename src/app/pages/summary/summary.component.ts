@@ -28,18 +28,5 @@ export class SummaryComponent {
 
 
   }
-//-----------------------------Sistemare la funzione--------------------------------//
-  // isDHU(): string {
-  //   const isActive:boolean = this.carBuild.displayHeadsUp!
-  //   console.log(isActive)
-  //   let response:string;
-  //   if (isActive){
-  //     response="Yes"
-  //   } else{
-  //     response = "No"
-  //   }
-  //   return response
-  // }
-
 }
 
