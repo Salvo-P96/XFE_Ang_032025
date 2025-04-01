@@ -54,8 +54,8 @@ export class CustomBuildComponent {
       trimType: new FormControl('', [Validators.required]),
 
       displaySize: new FormControl('', [Validators.required]),
-      displayHeadsUp: new FormControl('', [Validators.required]),
-      autopilot: new FormControl('', [Validators.required]),
+      displayHeadsUp: new FormControl(false),
+      autopilot: new FormControl(false),
     });
   }
 

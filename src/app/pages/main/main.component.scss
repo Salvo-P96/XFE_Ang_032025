@@ -88,3 +88,13 @@
     margin-top: 5rem;
     height: 30rem;
   }
+
+
+  @media (max-width:480px) {
+    .parallax{
+      background-image: url("C:/VSC/AngularPRJ/AngularPRJ-01/src/assets/specter-topvw.png");
+    }
+    .parallaxTxt{
+      top: 40%;
+    }
+  }

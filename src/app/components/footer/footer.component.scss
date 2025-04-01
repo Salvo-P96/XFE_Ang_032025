@@ -4,4 +4,15 @@ body{
     color: #f4f6e5;
     height:10vh;
     border-top: 1px solid #ffffff66;
+
+}
+
+.logo{
+    width: 200px;
+    height: fit-content;
+    background-image: url("C:/VSC/AngularPRJ/AngularPRJ-01/src/assets/LuxarLogo/LuxarLogo3.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

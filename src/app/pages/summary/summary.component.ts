@@ -17,25 +17,29 @@ export class SummaryComponent {
 
   carBuild :customCar = new customCar
   private subscription!: Subscription;
-  
+  displayHU:string="No";
+  autopilot:string="No";
 
   constructor(private router: Router, private route: ActivatedRoute, private eventService: EventService){}
 
   ngOnInit(): void {
       this.carBuild= JSON.parse(sessionStorage.getItem("carBuild")!);
+
+
+
   }
 //-----------------------------Sistemare la funzione--------------------------------//
-  isDHU(): string {
-    const isActive:boolean = this.carBuild.displayHeadsUp!
-    console.log(isActive)
-    let response:string;
-    if (isActive){
-      response="Yes"
-    } else{
-      response = "No"
-    }
-    return response
-  }
+  // isDHU(): string {
+  //   const isActive:boolean = this.carBuild.displayHeadsUp!
+  //   console.log(isActive)
+  //   let response:string;
+  //   if (isActive){
+  //     response="Yes"
+  //   } else{
+  //     response = "No"
+  //   }
+  //   return response
+  // }
 
 }
 
