@@ -1,143 +1,144 @@
-$logo1:"../../../assets/Logos/aston_martin.jpg";
-$logo2:"../../../assets/Logos/audi.jpg";
-$logo3:"../../../assets/Logos/bentley.jpg";
-$logo4:"../../../assets/Logos/bmw.jpg";
-$logo5:"../../../assets/Logos/brabus.jpg";
-$logo6:"../../../assets/Logos/ferrari.jpg";
-$logo7:"../../../assets/Logos/ford.jpg";
-$logo8:"../../../assets/Logos/koenigsegg.jpg";
-$logo9:"../../../assets/Logos/lamborghini.jpg";
-$logo10:"../../../assets/Logos/maybach.jpg";
-$logo11:"../../../assets/Logos/mclaren.jpg";
-$logo12:"../../../assets/Logos/bugatti.jpg";
-
+$logo1: "../../../assets/Logos/aston_martin.jpg";
+$logo2: "../../../assets/Logos/audi.jpg";
+$logo3: "../../../assets/Logos/bentley.jpg";
+$logo4: "../../../assets/Logos/bmw.jpg";
+$logo5: "../../../assets/Logos/brabus.jpg";
+$logo6: "../../../assets/Logos/ferrari.jpg";
+$logo7: "../../../assets/Logos/ford.jpg";
+$logo8: "../../../assets/Logos/koenigsegg.jpg";
+$logo9: "../../../assets/Logos/lamborghini.jpg";
+$logo10: "../../../assets/Logos/maybach.jpg";
+$logo11: "../../../assets/Logos/mclaren.jpg";
+$logo12: "../../../assets/Logos/bugatti.jpg";
 
 .grid-container {
-    display: flex;
-    gap: 2rem 3rem;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    margin: 0 15%;
+  display: flex;
+  gap: 2rem 3rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 0 15%;
+}
 
-  }
-  
-  .grid-item{
-    width: 10rem;  
-    height: 6rem;
-    border: 1px solid #FAF9F6 ;
-    background-color: #FFFFF0;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 0.5rem;
-  }
+.grid-item {
+  width: 10rem;
+  height: 6rem;
+  border: 1px solid #faf9f6;
+  background-color: #fffff0;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+}
 
-  .grid-item:hover{
-    background-color: #EFEFE0;
-  }
+.grid-item:hover {
+  background-color: #efefe0;
+}
 
-  .logo1{
-    background-image: url($logo1);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 20%;
-  }
+.logo1 {
+  background-image: url($logo1);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 20%;
+}
 
-  .logo2{
-    background-image: url($logo2);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 20%;
-  }
+.logo2 {
+  background-image: url($logo2);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 20%;
+}
 
-  .logo3{
-    background-image: url($logo3);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 20%;
-  }
+.logo3 {
+  background-image: url($logo3);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 20%;
+}
 
-  .logo4{
-    background-image: url($logo4);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 20%;
-  }
-  
-  .logo5{
-    background-image: url($logo5);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 20%;
-  }
-  
-  .logo6{
-    background-image: url($logo6);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 20%;
-  }
-  
-  .logo7{
-    background-image: url($logo7);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 20%;
-  }
-  .logo8{
-    background-image: url($logo8);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 20%;
-  }
-  
-  .logo9{
-    background-image: url($logo9);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 20%;
-  }
-  
-  .logo10{
-    background-image: url($logo10);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 20%;
-  }
-  
-  .logo11{
-    background-image: url($logo11);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 20%;
-  }
-  
-  .logo12{
-    background-image: url($logo12);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 20%;
-  }
-  
-  
-  
-@media (max-width:480px) {
+.logo4 {
+  background-image: url($logo4);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 20%;
+}
 
+.logo5 {
+  background-image: url($logo5);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 20%;
+}
+
+.logo6 {
+  background-image: url($logo6);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 20%;
+}
+
+.logo7 {
+  background-image: url($logo7);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 20%;
+}
+.logo8 {
+  background-image: url($logo8);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 20%;
+}
+
+.logo9 {
+  background-image: url($logo9);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 20%;
+}
+
+.logo10 {
+  background-image: url($logo10);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 20%;
+}
+
+.logo11 {
+  background-image: url($logo11);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 20%;
+}
+
+.logo12 {
+  background-image: url($logo12);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 20%;
+}
+
+.mobileCont {
+  display: none;
+}
+
+@media (max-width: 480px) {
   .grid-container {
+    display: none;
+  }
+
+  .mobileCont {
     display: flex;
-    gap: 2rem 2rem;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    gap: 2rem 3rem;
     margin: 0 15%;
-
   }
-  
-  .grid-item{
-    width: 8rem;  
+  .grid-item {
+    width: 8rem;
     height: 5rem;
-    border: 1px solid #FAF9F6 ;
-    background-color: #FFFFF0;
+    border: 1px solid #faf9f6;
+    background-color: #fffff0;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 0.5rem;

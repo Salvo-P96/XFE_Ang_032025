@@ -8,4 +8,27 @@ import { Component } from '@angular/core';
 })
 export class CarouselComponent {
 
+  slideIndex: number = 0;
+  slides: HTMLElement[] = [];
+
+  ngOnInit(): void {
+    this.slides = Array.from(document.getElementsByClassName('mySlides') as HTMLCollectionOf<HTMLElement>);
+    this.carousel();
+  }
+
+  carousel(): void {
+    setInterval(() => {
+      this.slides.forEach((slide) => {
+        slide.style.display = 'none';
+      });
+
+      this.slideIndex++;
+
+      if (this.slideIndex > this.slides.length) {
+        this.slideIndex = 1;
+      }
+
+      this.slides[this.slideIndex - 1].style.display = 'block';
+    }, 1000);
+  }
 }
