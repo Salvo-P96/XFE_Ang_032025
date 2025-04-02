@@ -85,6 +85,11 @@
 
 
     @media (max-width:480px) {
+
+      .content{
+        padding-top: 0;
+      }
+
       .parallax{
         background-image: url("../../../assets/specter-topvw.png");
         background-attachment: scroll;

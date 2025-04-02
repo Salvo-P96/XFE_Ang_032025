@@ -5,7 +5,7 @@
     width: 100%;
 }   
     .caroContent{
-        height: auto;
+        height: 60vh;
         width: 45%;
         background-image: url("../../../assets/AboutIMG.png");
         background-repeat: no-repeat;
@@ -26,3 +26,23 @@
             font-size: 15px;
         }
     }
+
+    
+@media (max-width:480px) {
+
+    //----------non appare l'immagine nel contenitore------------//
+
+    .caroContent{
+        width: 100%;
+        height: 64vh;
+        background-image: url("../../../assets/About-Mobile.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size:contain;
+    }
+    .static{
+        display: none;
+    }
+
+
+}

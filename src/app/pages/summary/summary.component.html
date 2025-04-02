@@ -1,9 +1,13 @@
 <div class="bodyCont">
    <div class="centralCard">
 
+      <div class="summaryHead">
+         <h3>Quote details</h3>
+      </div>
     <div *ngIf="carBuild" class="buildTxt">
-        <h3>Dettagli Preventivo</h3>
-        <div class="generics categories">
+
+        <div class="subCont sub1">
+         <div class="generics categories">
            <p class="title">Car Generics:</p>
            <p>Brand:  {{ carBuild.brand }}</p>
            <p>Model:  {{ carBuild.model }}</p>
@@ -12,15 +16,16 @@
         
          </div>
          <div class="exteriors  categories">
-            <p class="title"></p>
+            <p class="title">Exteriors:</p>
             <p>Color:  {{carBuild.color}}</p>
             <p>Finish:  {{carBuild.finish}}</p>
             <p>Rim type:  {{carBuild.rimType}}</p>
             <p>Rim size:  {{carBuild.rimSize}}</p>
          </div>
-
+        </div>
+        <div class="subCont sub2">
          <div class="interiors  categories">
-            <p class="title"></p>
+            <p class="title">Interiors:</p>
             <p>Seat material:  {{carBuild.seatMaterial}}</p>
             <p>Seat color:  {{carBuild.seatColor}}</p>
             <p>Upholstery:  {{carBuild.upholsteryColor}}</p>
@@ -28,14 +33,18 @@
          </div>
 
          <div class="tech categories">
-            <p class="title"></p>
+            <p class="title">Techs:</p>
             <p>displaySize:  {{carBuild.displaySize}}</p>
             <p>Display HeadsUp:  {{carBuild.displayHeadsUp? "Yes" : "No"}}</p>
             <p>Autopilot:  {{carBuild.autopilot? "Yes" : "No"}}</p>
 
          </div>
+        </div>
 
+        
+        
       </div>
-
+      
+      <button class="confirm" >Confirm</button>
    </div> 
 </div>

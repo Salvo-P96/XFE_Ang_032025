@@ -48,6 +48,10 @@
   color: #d4d6c5;
 }
 
+.homeLogo{
+  display: none;
+}
+
 .inputCont{
     display: flex;
     align-items: center;
@@ -271,4 +275,65 @@ ul li:hover{
 
 .summary:hover{
   color: #d4d6c5;
+}
+
+@media (max-width:480px) {
+
+
+  .navTop{
+    border: 1px solid #ffffff66;
+  }
+
+  .hamburger{
+    display: none;
+  }
+  .home{
+    display: none;
+  }
+
+  .searchBar{
+    width: 30%;
+  }
+
+  .homeLogo{
+    display: block;
+    background-image: url("../../../assets/LuxarLogo/LuxarIco.PNG");
+    width: 15vw;
+    height: 10vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:contain;
+    filter: blur(0);
+    transition: filter 0.5s ease;
+    cursor: pointer;
+  }
+
+  .homeLogo:hover{
+    filter: blur(1px);
+  }
+
+  .login{
+    padding: 5px 12px;
+    }
+
+
+  .navBottom{
+    align-items: end;
+    justify-content: end;
+  }
+
+  ul{
+    display: none;
+    
+  }
+
+  .customizeContainer{
+    justify-content: space-between;
+  }
+
+  .customBuild{
+    margin-left: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
 }

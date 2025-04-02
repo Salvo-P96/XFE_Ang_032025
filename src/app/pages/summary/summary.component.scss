@@ -1,6 +1,4 @@
-*{
-    margin: 0;
-}
+
 .bodyCont{
     width: 100%;
     height: 80%;
@@ -11,6 +9,10 @@
 }
 
 .centralCard{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
   width:40vw;
   height: 70vh;
   background-color: #D7d7d7;
@@ -19,16 +21,55 @@
 
 }
 
+.summaryHead{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 10vw;
+  background-color: #3a3a3a;
+  color: #e1e1e1;
+  font-size: 20px ;
+}
+
 .buildTxt{
   display: flex;
-  flex-direction: column;
   padding: 3rem;
+  margin-bottom: 2rem;
+}
+
+.sub1{
+  margin-right: 2rem;
+}
+
+.sub2{
+  margin-left: 2rem;
 }
 
 .categories{
   display: flex;
   flex-direction: column;
   align-items: start;
-  justify-content: center;
+  justify-content: start;
   padding: 2rem 0;
+}
+
+.title{
+  margin-bottom: 1rem;
+  padding: 0 20px;
+  background-color: #bdc2c5;
+  transform: skewX(-20deg);
+}
+
+.confirm{
+  width: 20%;
+  border-radius: 20px;
+  padding: 0.6rem 1rem;
+  border: 1px solid #2A2A2A;
+  margin-bottom: 2rem;
+}
+
+.confirm:active{
+  background-color: #dadada;
+  box-shadow:inset 0 0 3px #000000;
 }
