@@ -126,6 +126,13 @@ $logo12: "../../../assets/Logos/bugatti.jpg";
     display: none;
   }
 
+  .mySlides{
+    display: none;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+  }
+
   .mobileCont {
     display: flex;
     flex-wrap: wrap;

@@ -15,8 +15,9 @@ export class CarouselComponent {
     this.slides = Array.from(document.getElementsByClassName('mySlides') as HTMLCollectionOf<HTMLElement>);
     this.carousel();
   }
-
+  
   carousel(): void {
+    // this.slides[0].style.display = "grid";
     setInterval(() => {
       this.slides.forEach((slide) => {
         slide.style.display = 'none';
@@ -28,7 +29,7 @@ export class CarouselComponent {
         this.slideIndex = 1;
       }
 
-      this.slides[this.slideIndex - 1].style.display = 'block';
-    }, 1000);
+      this.slides[this.slideIndex - 1].style.display = 'grid';
+    }, 3000);
   }
 }

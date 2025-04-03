@@ -27,19 +27,41 @@
         }
     }
 
+    .mobileTxt{
+        display: none;
+    }
     
 @media (max-width:480px) {
 
-    //----------non appare l'immagine nel contenitore------------//
-
+    //--larghezza fissa, cambiare--//
     .caroContent{
-        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        width: 480px;
         height: 64vh;
         background-image: url("../../../assets/About-Mobile.png");
         background-position: center;
         background-repeat: no-repeat;
         background-size:contain;
     }
+
+    .mobileTxt{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #f6f8f4a4;
+        width: 30%;
+        height: 80%;
+        padding: 0 3rem;
+    }
+
+    .mobileTxt h3{
+        font-size: medium;
+        margin-bottom: 2rem;
+    }
+
     .static{
         display: none;
     }
