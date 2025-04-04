@@ -17,7 +17,6 @@ export class CarouselComponent {
   }
   
   carousel(): void {
-    // this.slides[0].style.display = "grid";
     setInterval(() => {
       this.slides.forEach((slide) => {
         slide.style.display = 'none';

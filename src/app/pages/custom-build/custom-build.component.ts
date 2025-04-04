@@ -71,9 +71,9 @@ export class CustomBuildComponent {
     menu?.classList.toggle('show');
     console.log(menu);
   }
-  test() {
-    console.log(this.carForm.value);
-  }
+  // test() {
+  //   console.log(this.carForm.value);
+  // }
 
   submit(): void {
     this.eventService.emitSummary(true);
