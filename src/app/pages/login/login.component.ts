@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NgIf } from '@angular/common';
 import { LoginService } from '../../Services/login.service';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
