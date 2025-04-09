@@ -14,7 +14,7 @@
       name="search"
       class="searchBar input-ripple"
     />
-    <button class="login">login</button>
+    <button class="login" (click)="goTo('login')">login</button>
   </div>
   <div class="navBottom">
     <ul>
@@ -27,9 +27,9 @@
 
     <div class="customizeContainer">
         <div *ngIf="showSummary">
-            <p class="summary" (click)="goTo('app-summary')">Summary</p>
+            <p class="summary" (click)="goTo('summary')">Summary</p>
         </div>
-      <p class="customBuild" (click)="goTo('app-custom-build')">Customize you dream</p>
+      <p class="customBuild" (click)="goTo('build')">Customize you dream</p>
     </div>
   </div>
 </div>
