@@ -1,20 +1,20 @@
 <div class="component">
   <div class="centralCard">
     <h2>Login</h2>
-    <form (ngSubmit)="onSubmit()">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <label for="username">Username:</label>
-      <input type="text" id="username" name="username" ngModel required />
-      <!-- <div ngIf="username.invalid && username.touched" style="color: #ff0000">
+      <input type="text" id="username" formControlName="username"/>
+      <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched" style="color: #ff0000">
         username cant be empty
-      </div> -->
+      </div>
 
       <label for="password">Password:</label>
-      <input type="password" id="password" name="password" ngModel required />
-      <!-- <div ngIf="password.invalid && password.touched" style="color: #ff0000">
+      <input type="password" id="password" formControlName="password"/>
+      <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" style="color: #ff0000">
         username cant be empty
-      </div> -->
+      </div>
 
-      <button type="submit">Login</button>
+      <button type="submit" [disabled]="loginForm.invalid">Login</button>
     </form>
   </div>
 </div>
