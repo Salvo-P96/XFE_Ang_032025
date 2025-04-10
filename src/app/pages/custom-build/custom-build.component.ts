@@ -38,24 +38,24 @@ export class CustomBuildComponent {
 
   constructor(private router: Router, private route: ActivatedRoute, private eventService: EventService) {
     this.carForm = new FormGroup({
-      brand: new FormControl('', [Validators.required]),
-      model: new FormControl('', [Validators.required]),
-      configuration: new FormControl('', [Validators.required]),
-      fuel: new FormControl('', [Validators.required]),
+      brand: new FormControl('RollsRoyce', [Validators.required]),
+      model: new FormControl('Spectre', [Validators.required]),
+      configuration: new FormControl('Black Badge', [Validators.required]),
+      fuel: new FormControl('Electric', [Validators.required]),
 
-      color: new FormControl('', [Validators.required]),
-      finish: new FormControl('', [Validators.required]),
-      rimType: new FormControl('', [Validators.required]),
-      rimSize: new FormControl('', [Validators.required]),
+      color: new FormControl('Vapour Violet', [Validators.required]),
+      finish: new FormControl('Crystal', [Validators.required]),
+      rimType: new FormControl('Led Illuminated', [Validators.required]),
+      rimSize: new FormControl('26"', [Validators.required]),
 
-      seatMaterial: new FormControl('', [Validators.required]),
-      seatColor: new FormControl('', [Validators.required]),
-      upholsteryColor: new FormControl('', [Validators.required]),
-      trimType: new FormControl('', [Validators.required]),
+      seatMaterial: new FormControl('Alcantara', [Validators.required]),
+      seatColor: new FormControl('Black', [Validators.required]),
+      upholsteryColor: new FormControl('Black', [Validators.required]),
+      trimType: new FormControl('Mahogany', [Validators.required]),
 
-      displaySize: new FormControl('', [Validators.required]),
-      displayHeadsUp: new FormControl(false),
-      autopilot: new FormControl(false),
+      displaySize: new FormControl('22"', [Validators.required]),
+      displayHeadsUp: new FormControl(true),
+      autopilot: new FormControl(true),
     });
   }
 
@@ -101,6 +101,8 @@ export class CustomBuildComponent {
         sessionStorage.removeItem("carBuild")
       }
       sessionStorage.setItem("carBuild",JSON.stringify(build))
+
+      this.router.navigate(['summary']);
     } else {
       console.log("Invalid");
     }

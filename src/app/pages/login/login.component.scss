@@ -8,12 +8,12 @@
 }
 
 .centralCard{
-  width:40vw;
-  height: 70vh;
+  width:20vw;
+  height: 60vh;
   background: #e7e7e7;
   background: radial-gradient(circle, #e7e7e7 0%, #c3c3c3 100%);
   border: 1px solid #2a2a2a;
-  border-radius: 5px;
+  border-radius: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -33,6 +33,7 @@ form{
 form input{
     margin-bottom: 1rem;
     border-radius: 10px;
+    padding: 5px;
 }
 
 button{

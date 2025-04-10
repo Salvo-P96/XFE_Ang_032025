@@ -23,6 +23,11 @@ export class SummaryComponent {
   constructor(private router: Router, private route: ActivatedRoute, private eventService: EventService){}
 
   ngOnInit(): void {
+    const element: HTMLElement | null = document.getElementById('mainNav');
+
+    if (element) {
+      element.style.display = 'block';
+    }
       this.carBuild= JSON.parse(sessionStorage.getItem("carBuild")!);
 
 

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NgIf } from '@angular/common';
 import { LoginService } from '../../Services/login.service';
@@ -15,14 +16,13 @@ import { LoginService } from '../../Services/login.service';
 export class LoginComponent {
   storedusername: string = "pippo"
   storedpassword: string = "0000"
+  admin:boolean=false;
+  name:string="";
 
   loginForm: FormGroup;
 
-  //Aggiungere il FormBuilder nel costruttore ed utilizzarlo per creare il FormGroup
-  //Aggiunto il LoginService
-  constructor(private fb: FormBuilder, private loginService: LoginService) {
-    //La funzione group() del FormBuilder è più indicata rispetto ad istanziare un nuovo FormGroup
-    // in modo da non dover instanziare anche i FormControl.
+  constructor(private fb: FormBuilder, private loginService: LoginService,  private router: Router) {
+
     this.loginForm = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
@@ -30,20 +30,33 @@ export class LoginComponent {
 
   }
 
-  //Effettuata chiamata al servizio
   ngOnInit(){
+    const element: HTMLElement | null = document.getElementById('mainNav');
+
+    if (element) {
+      element.style.display = 'block';
+    }
     this.loginService.getUsers().subscribe(res => console.log(res))
   }
   onSubmit(): void {
-
     const username = this.loginForm.get('username')?.value;
     const password = this.loginForm.get('password')?.value;
 
+    this.loginService.getUsers().subscribe(users => {
+      const accessGranted = users.find(user => user.username === username && user.password === password);
 
-    if (username === this.storedusername && password === this.storedpassword) {
-      console.log("Access granted to:", username);
-    } else {
-      console.log("Access denied");
-    }
+      if (accessGranted) {
+        console.log("Access granted to:", accessGranted.username);
+        this.admin = true;
+        this.name = users.find(user => user.name);
+        console.log(this.name);
+        localStorage.setItem('admin', JSON.stringify(this.admin));
+        localStorage.setItem('name', JSON.stringify(this.name));
+        this.router.navigate(['adminZone']);
+      } else {
+        console.log("Access denied");
+        this.admin = false;
+      }
+    });
   }
 }

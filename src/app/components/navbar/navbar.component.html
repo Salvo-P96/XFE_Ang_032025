@@ -14,7 +14,8 @@
       name="search"
       class="searchBar input-ripple"
     />
-    <button class="login" (click)="goTo('login')">login</button>
+    <button *ngIf="!isAdmin" class="login" (click)="goTo('login')" >login</button>
+    <button *ngIf="isAdmin" class="logout" (click)="logOut()" >logout</button>
   </div>
   <div class="navBottom">
     <ul>
