@@ -11,8 +11,11 @@ import { NgIf } from '@angular/common';
 })
 export class AdminHomeComponent implements OnInit {
   userName: string = '';
-  summaryList:any=[5];
+  summaryList:any=[0];
   isListEmpty:boolean=true;
+  isReviewed:boolean=false;
+  renderer: any;
+  div: any;
 
   ngOnInit(): void {
     const user = JSON.parse(localStorage.getItem('name') || '{}');
@@ -21,15 +24,17 @@ export class AdminHomeComponent implements OnInit {
     } else {
       this.userName = 'Utente';
     }
+
+      if(this.summaryList.length==0){
+        this.isListEmpty=true
+      } else {
+        this.isListEmpty=false
+        
+      }
   }
   
-
-  //temporaneo, logica su schermo per ragionare
-  populateList():void{
-    if(this.summaryList.length==0){
-      this.isListEmpty=true
-    } else {
-      this.isListEmpty=false
-    }
+  createSummaryList(){
+    
   }
+
 }
