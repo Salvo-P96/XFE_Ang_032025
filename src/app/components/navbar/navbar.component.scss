@@ -1,148 +1,144 @@
-*{
-  font-family: heldane,prata,sans-serif;
+* {
+  font-family: heldane, prata, sans-serif;
 }
 
-.navbody{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+.navbody {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 //non collabora
-.navTop{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: 4rem;
-    background-color: #1A1A1A;
-    color: #f4f6e5;
-    border-bottom: 1px solid #ffffff66;
+.navTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 4rem;
+  background-color: #1a1a1a;
+  color: #f4f6e5;
+  border-bottom: 1px solid #ffffff66;
 }
 
-.navBottom{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: 2.5rem;
-    background-color: #1A1A1A;
-    color: #f4f6e5;
-    border-bottom: 1px solid #ffffff66;
+.navBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 2.5rem;
+  background-color: #1a1a1a;
+  color: #f4f6e5;
+  border-bottom: 1px solid #ffffff66;
 }
 
-.left{
+.left {
   display: flex;
   align-items: center;
   justify-content: left;
-    padding-left: 3rem;
+  padding-left: 3rem;
 }
 
-.left p{
+.left p {
   margin-left: 2rem;
   color: #f4f6e5;
   cursor: pointer;
 }
 
-.left p:hover{
+.left p:hover {
   color: #d4d6c5;
 }
 
-.homeLogo{
+.homeLogo {
   display: none;
 }
 
-.inputCont{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30%;
+.inputCont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
 }
 
-.searchBar{
-    width: 40%;
-    border-radius: 20px;
+.searchBar {
+  width: 40%;
+  border-radius: 20px;
 }
 
-.right{
-    width: 35%;
+.right {
+  width: 35%;
 }
 
-.loginBox{
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    justify-content: center;
-    width: 50%; 
-    height: 100%;
+.loginBox {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 100%;
 }
-
 
 /*------------------------------------------------------------------*/
 /*------------------------------INPUT-------------------------------*/
 /*------------------------------------------------------------------*/
 
-.login{
-    background-color: transparent;
-    border-radius: 20px;
-    padding: 10px 25px;
-    border:1px solid #ccc;
-    color: #f4f6e5;
-    transition: background-color 0.1s ease;
-    margin-right: 3rem;
-    
-    &:active {
-      background-color: #fff;
-      animation: 0.6s forwards;
-      color: #000;
-      }
-    }
+.login {
+  background-color: transparent;
+  border-radius: 20px;
+  padding: 10px 25px;
+  border: 1px solid #ccc;
+  color: #f4f6e5;
+  transition: background-color 0.1s ease;
+  margin-right: 3rem;
 
-    .logout{
-      background-color: transparent;
-      border-radius: 20px;
-      padding: 10px 25px;
-      border:1px solid #ccc;
-      color: #f4f6e5;
-      transition: background-color 0.1s ease;
-      margin-right: 3rem;
-      
-      &:active {
-        background-color: #fff;
-        animation: 0.6s forwards;
-        color: #000;
-        }
-      }
+  &:active {
+    background-color: #fff;
+    animation: 0.6s forwards;
+    color: #000;
+  }
+}
 
+.logout {
+  background-color: transparent;
+  border-radius: 20px;
+  padding: 10px 25px;
+  border: 1px solid #ccc;
+  color: #f4f6e5;
+  transition: background-color 0.1s ease;
+  margin-right: 3rem;
+
+  &:active {
+    background-color: #fff;
+    animation: 0.6s forwards;
+    color: #000;
+  }
+}
 
 /*------------------------------------------------------------------*/
 /*------------------------------INPUT-------------------------------*/
 /*------------------------------------------------------------------*/
 
 $input-border: 1px solid #ccc;
-$ripple-color: #ffffff; 
+$ripple-color: #ffffff;
 $ripple-duration: 0.6s;
 
 .input-ripple {
-    position: relative;
-    display: inline-block;
-    padding: 10px;
-    border: $input-border;
-    outline: none;
-    background-color: transparent;
-    transition: background-color 0.3s ease;
-    outline: none;
-    color: #f4f6e5;
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+  border: $input-border;
+  outline: none;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+  outline: none;
+  color: #f4f6e5;
 
   &:focus {
     background-color: $ripple-color;
     animation: $ripple-duration forwards;
-      color: #000;
-
-
+    color: #000;
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 50%;
       left: 0;
@@ -156,7 +152,7 @@ $ripple-duration: 0.6s;
   }
 
   &:not(:focus)::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     right: 0;
@@ -195,67 +191,68 @@ $ripple-duration: 0.6s;
 /*--------------------------HamburgerMenu---------------------------*/
 /*------------------------------------------------------------------*/
 
-
 .hamburger {
-    position: relative;
-    width: 30px;
-    height: 20px;
-    cursor: pointer;
-    background: transparent;
-    border: none;
+  position: relative;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+
+  &::before,
+  &::after,
+  .line {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 80%;
+    background: #ffd700;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    position: absolute;
+    left: 0;
+    border-radius: 2px;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+
+  .line {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &:focus {
     outline: none;
-  
-    &::before, &::after, .line {
-      content: "";
-      display: block;
-      height: 2px;
-      width: 80%;
-      background: #ffd700;
-      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-      position: absolute;
-      left: 0;
-      border-radius: 2px;
-    }
-  
+
     &::before {
-      top: 0;
+      transform: translateY(9px) rotate(40deg);
     }
-  
+
     &::after {
-      bottom: 0;
+      transform: translateY(-9px) rotate(-40deg);
     }
-  
+
     .line {
-      top: 50%;
-      transform: translateY(-50%);
-    }
-  
-    &:focus {
-      outline: none;
-  
-      &::before {
-        transform: translateY(9px) rotate(40deg);
-      }
-  
-      &::after {
-        transform: translateY(-9px) rotate(-40deg);
-      }
-  
-      .line {
-        opacity: 0;
-      }
+      opacity: 0;
     }
   }
+}
 
 /*------------------------------------------------------------------*/
 /*--------------------------HamburgerMenu---------------------------*/
 /*------------------------------------------------------------------*/
- 
-.customizeContainer{
+
+.customizeContainer {
   display: flex;
 }
 
-ul{
+ul {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -264,96 +261,100 @@ ul{
   margin-left: 2rem;
 }
 
-ul li{
+ul li {
   margin-right: 1rem;
   color: #f4f6e5;
 }
 
-ul li:hover{
+ul li:hover {
   color: #d4d6c5;
 }
-  
 
-.customBuild{
+.customBuild {
   margin-right: 2rem;
   color: #f4f6e5;
   cursor: pointer;
 }
 
-.customBuild:hover{
+.customBuild:hover {
   color: #d4d6c5;
 }
 
-.summary{
+.summary {
   margin-right: 2rem;
   color: #f4f6e5;
   cursor: pointer;
 }
 
-.summary:hover{
+.summary:hover {
   color: #d4d6c5;
 }
 
-@media (max-width:480px) {
+.adminZ {
+  margin-right: 2rem;
+  color: #f4f6e5;
+  cursor: pointer;
+}
 
+.adminZ:hover {
+  color: #d4d6c5;
+}
 
-  .navTop{
+@media (max-width: 480px) {
+  .navTop {
     border: 1px solid #ffffff66;
   }
 
-  .hamburger{
+  .hamburger {
     display: none;
   }
-  .home{
+  .home {
     display: none;
   }
 
-  .searchBar{
+  .searchBar {
     width: 30%;
   }
 
-  .homeLogo{
+  .homeLogo {
     display: block;
     background-image: url("../../../assets/LuxarLogo/LuxarIco.PNG");
     width: 15vw;
     height: 10vh;
     background-position: center;
     background-repeat: no-repeat;
-    background-size:contain;
+    background-size: contain;
     filter: blur(0);
     transition: filter 0.5s ease;
     cursor: pointer;
   }
 
-  .homeLogo:hover{
+  .homeLogo:hover {
     filter: blur(1px);
   }
 
-  .login{
+  .login {
     padding: 5px 12px;
-    }
-  .logout{
+  }
+  .logout {
     padding: 5px 12px;
-    }
+  }
 
-
-  .navBottom{
+  .navBottom {
     align-items: end;
     justify-content: end;
   }
 
-  ul{
+  ul {
     display: none;
-    
   }
 
-  .customizeContainer{
+  .customizeContainer {
     justify-content: space-between;
   }
 
-  .customBuild{
+  .customBuild {
     margin-left: 1rem;
     margin-bottom: 0.5rem;
   }
-  
 }

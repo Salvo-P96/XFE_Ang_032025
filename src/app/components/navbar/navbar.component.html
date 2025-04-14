@@ -27,6 +27,7 @@
     </ul>
 
     <div class="customizeContainer">
+      <div class="adminZ" *ngIf="isAdmin" (click)="goTo('adminZone')">Admin Zone</div>
         <div *ngIf="showSummary">
             <p class="summary" (click)="goTo('summary')">Summary</p>
         </div>

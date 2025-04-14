@@ -1,6 +1,4 @@
-import {
-  Component,
-} from '@angular/core';
+import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import {
   FormGroup,
@@ -14,6 +12,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { EventService } from '../../Services/event.service';
+import { CarBuildService } from '../../Services/car-build.service';
 import { customCar } from '../../../Models/customCar';
 
 @Component({
@@ -31,12 +30,16 @@ import { customCar } from '../../../Models/customCar';
   styleUrl: './custom-build.component.scss',
 })
 export class CustomBuildComponent {
-
   carForm: FormGroup;
 
   selectFormControl = new FormControl('', Validators.required);
 
-  constructor(private router: Router, private route: ActivatedRoute, private eventService: EventService) {
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private eventService: EventService,
+    private carBuildService: CarBuildService
+  ) {
     this.carForm = new FormGroup({
       brand: new FormControl('RollsRoyce', [Validators.required]),
       model: new FormControl('Spectre', [Validators.required]),
@@ -71,49 +74,32 @@ export class CustomBuildComponent {
     menu?.classList.toggle('show');
     console.log(menu);
   }
-  // test() {
-  //   console.log(this.carForm.value);
-  // }
 
   submit(): void {
     this.eventService.emitSummary(true);
 
-    if(this.carForm.valid){
-      const build = new customCar
-      build.brand = this.carForm.value.brand,
-      build.model =this.carForm.value.model,
-      build.configuration =this.carForm.value.configuration,
-      build.fuel =this.carForm.value.fuel,
-      build.color =this.carForm.value.color,
-      build.finish =this.carForm.value.finish,
-      build.rimType=this.carForm.value.rimType,
-      build.rimSize =this.carForm.value.rimSize,
-      build.seatMaterial=this.carForm.value.seatMaterial,
-      build.seatColor=this.carForm.value.seatColor,
-      build.upholsteryColor=this.carForm.value.upholsteryColor,
-      build.trimType=this.carForm.value.trimType,
-      build.displaySize=this.carForm.value.displaySize,
-      build.displayHeadsUp=this.carForm.value.displayHeadsUp,
-      build.autopilot=this.carForm.value.autopilot
+    if (this.carForm.valid) {
+      const build = new customCar();
+      (build.brand = this.carForm.value.brand),
+        (build.model = this.carForm.value.model),
+        (build.configuration = this.carForm.value.configuration),
+        (build.fuel = this.carForm.value.fuel),
+        (build.color = this.carForm.value.color),
+        (build.finish = this.carForm.value.finish),
+        (build.rimType = this.carForm.value.rimType),
+        (build.rimSize = this.carForm.value.rimSize),
+        (build.seatMaterial = this.carForm.value.seatMaterial),
+        (build.seatColor = this.carForm.value.seatColor),
+        (build.upholsteryColor = this.carForm.value.upholsteryColor),
+        (build.trimType = this.carForm.value.trimType),
+        (build.displaySize = this.carForm.value.displaySize),
+        (build.displayHeadsUp = this.carForm.value.displayHeadsUp),
+        (build.autopilot = this.carForm.value.autopilot);
 
       console.log(build);
-      if(sessionStorage.getItem("carBuild")){
-        sessionStorage.removeItem("carBuild")
-      }
-      sessionStorage.setItem("carBuild",JSON.stringify(build))
 
-      this.router.navigate(['summary']);
-    } else {
-      console.log("Invalid");
+      this.carBuildService.saveBuild(build);
+      console.log('Build salvata con successo!');
     }
   }
-
-
 }
-
-
-
-
-
-
-

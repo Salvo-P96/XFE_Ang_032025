@@ -1,23 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import { isEmpty } from 'rxjs';
-import { NgIf } from '@angular/common';
+import { NgIf, NgFor } from '@angular/common';
+import { CarBuildService } from '../../Services/car-build.service';
 
 @Component({
   selector: 'app-admin-home',
-  imports: [NgIf
+  imports: [NgIf,
+            NgFor
    ],
   templateUrl: './admin-home.component.html',
   styleUrls: ['./admin-home.component.scss']
 })
 export class AdminHomeComponent implements OnInit {
   userName: string = '';
-  summaryList:any=[0];
+  summaryList:any[]=[];
   isListEmpty:boolean=true;
   isReviewed:boolean=false;
   renderer: any;
   div: any;
 
+  constructor(private carBuildService: CarBuildService){}
+
   ngOnInit(): void {
+    this.summaryList = this.carBuildService.getBuilds();
     const user = JSON.parse(localStorage.getItem('name') || '{}');
     if (user) {
       this.userName = user.name;
@@ -33,8 +38,11 @@ export class AdminHomeComponent implements OnInit {
       }
   }
   
-  createSummaryList(){
-    
+  saveReview(){
+    this.isReviewed=true;
   }
 
+  clear(){
+    this.carBuildService.clearBuilds()
+  }
 }

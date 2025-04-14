@@ -9,14 +9,15 @@
     <div class="quoteSection">
       <div class="preventivi">
         <p *ngIf="isListEmpty">I preventivi non sono ancora stati caricati.</p>
-      <!-- <div class="summaryCont">
-        <p>Brand:</p>
-        <p>Model:</p>
+      <div class="summaryCont" *ngFor="let build of summaryList">
+        <p>Brand:{{build.brand}}</p>
+        <p>Model:{{build.model}}</p>
         <p>Date:</p>
         <p *ngIf="isReviewed">price:</p>
         <button type="button">Review</button>
-      </div> -->
+      </div>
       </div>
     </div>
   </div>
+  <button (click)="clear()">clear</button>
 </div>
