@@ -39,6 +39,6 @@ export class NavbarComponent {
     localStorage.removeItem('admin');
     localStorage.removeItem('name');
     this.isAdmin = false;
-    this.goTo('login');
+    this.goTo('');
   }
 }

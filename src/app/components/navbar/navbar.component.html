@@ -28,10 +28,10 @@
 
     <div class="customizeContainer">
       <div class="adminZ" *ngIf="isAdmin" (click)="goTo('adminZone')">Admin Zone</div>
-        <div *ngIf="showSummary">
+        <div *ngIf="showSummary && !isAdmin">
             <p class="summary" (click)="goTo('summary')">Summary</p>
         </div>
-      <p class="customBuild" (click)="goTo('build')">Customize you dream</p>
+      <p *ngIf="!isAdmin" class="customBuild" (click)="goTo('build')">Customize you dream</p>
     </div>
   </div>
 </div>

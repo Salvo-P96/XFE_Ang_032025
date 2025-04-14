@@ -9,15 +9,62 @@
     <div class="quoteSection">
       <div class="preventivi">
         <p *ngIf="isListEmpty">I preventivi non sono ancora stati caricati.</p>
-      <div class="summaryCont" *ngFor="let build of summaryList">
-        <p>Brand:{{build.brand}}</p>
-        <p>Model:{{build.model}}</p>
-        <p>Date:</p>
-        <p *ngIf="isReviewed">price:</p>
-        <button type="button">Review</button>
-      </div>
+        <div class="summaryCont" *ngFor="let build of summaryList">
+          <p>Brand: {{ build.brand }}</p>
+          <p>Model: {{ build.model }}</p>
+          <p>Date:</p>
+          <p *ngIf="isReviewed">price:</p>
+          <button type="button" (click)="show()">Review</button>
+        </div>
       </div>
     </div>
   </div>
   <button (click)="clear()">clear</button>
 </div>
+
+<!-- ---------------------------------------------- -->
+<div *ngIf="isShown" class="summarycard">
+  <div class="summary">
+    <div class="summaryHead">
+      <h3>Quote details</h3>
+    </div>
+    <div class="buildTxt">
+      <div class="subCont sub1">
+        <div class="generics categories">
+          <p class="title">Car Generics:</p>
+          <p>Brand:</p>
+          <p>Model:</p>
+          <p>Configuration:</p>
+          <p>Fuel:</p>
+        </div>
+        <div class="exteriors categories">
+          <p class="title">Exteriors:</p>
+          <p>Color:</p>
+          <p>Finish:</p>
+          <p>Rim type:</p>
+          <p>Rim size:</p>
+        </div>
+      </div>
+      <div class="subCont sub2">
+        <div class="interiors categories">
+          <p class="title">Interiors:</p>
+          <p>Seat material:</p>
+          <p>Seat color:</p>
+          <p>Upholstery:</p>
+          <p>Trim:</p>
+        </div>
+
+        <div class="tech categories">
+          <p class="title">Techs:</p>
+          <p>displaySize:</p>
+          <p>Display HeadsUp:</p>
+          <p>Autopilot:</p>
+        </div>
+
+        <button class="intBtn">Confirm</button>
+        <button class="intBtn" (click)="close()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ---------------------------------------------- -->

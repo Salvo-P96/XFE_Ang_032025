@@ -28,7 +28,7 @@ export class SummaryComponent {
     if (element) {
       element.style.display = 'block';
     }
-      this.carBuild= JSON.parse(sessionStorage.getItem("carBuild")!);
+      this.carBuild= JSON.parse(localStorage.getItem("carBuilds")!);
 
 
 

@@ -18,6 +18,7 @@ export class AdminHomeComponent implements OnInit {
   isReviewed:boolean=false;
   renderer: any;
   div: any;
+  isShown:boolean= false;
 
   constructor(private carBuildService: CarBuildService){}
 
@@ -25,7 +26,7 @@ export class AdminHomeComponent implements OnInit {
     this.summaryList = this.carBuildService.getBuilds();
     const user = JSON.parse(localStorage.getItem('name') || '{}');
     if (user) {
-      this.userName = user.name;
+      this.userName = user;
     } else {
       this.userName = 'Utente';
     }
@@ -44,5 +45,16 @@ export class AdminHomeComponent implements OnInit {
 
   clear(){
     this.carBuildService.clearBuilds()
+    this.summaryList=[]
+    this.isListEmpty=true;
+    // location.reload();
+    console.log(this.summaryList)
+  }
+
+  show(){
+    this.isShown=true;
+  }
+  close(){
+    this.isShown=false;
   }
 }

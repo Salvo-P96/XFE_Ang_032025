@@ -48,7 +48,7 @@ export class LoginComponent {
       if (accessGranted) {
         console.log("Access granted to:", accessGranted.username);
         this.admin = true;
-        this.name = users.find(user => user.name);
+        this.name = accessGranted.name;
         console.log(this.name);
         localStorage.setItem('admin', JSON.stringify(this.admin));
         localStorage.setItem('name', JSON.stringify(this.name));
