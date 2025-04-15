@@ -47,7 +47,6 @@ export class AdminHomeComponent implements OnInit {
     this.carBuildService.clearBuilds()
     this.summaryList=[]
     this.isListEmpty=true;
-    // location.reload();
     console.log(this.summaryList)
   }
 
@@ -56,5 +55,9 @@ export class AdminHomeComponent implements OnInit {
   }
   close(){
     this.isShown=false;
+  }
+  confirm(){
+    this.isReviewed=true;
+    console.log(this.isReviewed)
   }
 }
