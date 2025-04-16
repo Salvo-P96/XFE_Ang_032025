@@ -1,6 +1,24 @@
 <div class="customBody">
 
-    <div class="sections profile"><p>Username: </p> <button (click)="openConfirm()">Change</button> </div>
-    <div class="sections name"><p>Name: </p> <button (click)="openConfirm()">Change</button> </div>
-    <div class="sections password"><p>Password: </p> <button (click)="openConfirm()">Change</button> </div>
+    <div class="sections profile"><p>Username: </p> <button (click)="openConfirm('username')">Change</button> </div>
+    <div class="sections name"><p>Name: </p> <button (click)="openConfirm('name')">Change</button> </div>
+    <div class="sections password"><p>Password: </p> <button (click)="openConfirm('password')">Change</button> </div>
 </div>
+<div *ngIf="editing" class="editCard">
+    <p>Insert new {{ targetField }}</p>
+    <input type="text" [(ngModel)]="editValue" />
+    <div class="buttons">
+      <button (click)="saveChange()">Save</button>
+      <button (click)="editing = false">Cancel</button>
+    </div>
+  </div>
+<!-- -----------password confirmation--------- -->
+ <div class="confirmCard" *ngIf="confirmation">
+    <div class="passwordCard">
+        <p>Insert the old password</p>
+        <input type="password" name="" id="" placeholder="...">
+        <button (click)="confirmPassword()">Confirm</button>
+        <button (click)="cancel()">Cancel</button>
+    </div>
+ </div>
+ 
