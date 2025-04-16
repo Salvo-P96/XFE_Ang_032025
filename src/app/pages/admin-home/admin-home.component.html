@@ -9,20 +9,21 @@
     <div class="quoteSection">
       <div class="preventivi">
         <p *ngIf="isListEmpty">I preventivi non sono ancora stati caricati.</p>
-        <div class="summaryCont" *ngFor="let build of summaryList">
+        <div class="summaryCont" *ngFor="let build of summaryList, let i=index">
+          <p>Order number: {{i +1}}</p>
           <p>Brand: {{ build.brand }}</p>
           <p>Model: {{ build.model }}</p>
-          <p>Date:</p>
-          <p *ngIf="isReviewed">price:</p>
-          <button type="button" (click)="show()">Review</button>
+          <p>Date: {{build.date}}</p>
+          <p *ngIf="isReviewed">price: {{build.price}}</p>
+          <button type="button" (click)="show(build)">Review</button>
         </div>
       </div>
     </div>
   </div>
-  <button (click)="clear()">clear</button>
+  <!-- <button (click)="clear()">clear</button> -->
 </div>
 
-<!-- -----------------card a comparsa----------------------------- -->
+<!-- -----------------card a comparsa-------------------- -->
 <div *ngIf="isShown" class="summarycard">
   <div class="summary">
     <div class="summaryHead">
@@ -33,40 +34,42 @@
         <div class="subCont sub1">
           <div class="generics categories">
             <p class="title">Car Generics:</p>
-            <p>Brand:</p>
-            <p>Model:</p>
-            <p>Configuration:</p>
-            <p>Fuel:</p>
+            <p>Brand: {{ selectedSum.brand }}</p>
+            <p>Model: {{ selectedSum.model }}</p>
+            <p>Configuration: {{ selectedSum.configuration }}</p>
+            <p>Fuel: {{ selectedSum.fuel }}</p>
           </div>
           <div class="exteriors categories">
             <p class="title">Exteriors:</p>
-            <p>Color:</p>
-            <p>Finish:</p>
-            <p>Rim type:</p>
-            <p>Rim size:</p>
+            <p>Color: {{ selectedSum.color }}</p>
+            <p>Finish: {{ selectedSum.finish }}</p>
+            <p>Rim type: {{ selectedSum.rimType }}</p>
+            <p>Rim size: {{ selectedSum.rimSize }}</p>
           </div>
         </div>
         <div class="subCont sub2">
           <div class="interiors categories">
             <p class="title">Interiors:</p>
-            <p>Seat material:</p>
-            <p>Seat color:</p>
-            <p>Upholstery:</p>
-            <p>Trim:</p>
+            <p>Seat material: {{ selectedSum.seatMaterial }}</p>
+            <p>Seat color: {{ selectedSum.seatColor }}</p>
+            <p>Upholstery: {{ selectedSum.upholsteryColor }}</p>
+            <p>Trim: {{ selectedSum.trimType }}</p>
           </div>
-
+  
           <div class="tech categories">
             <p class="title">Techs:</p>
-            <p>displaySize:</p>
-            <p>Display HeadsUp:</p>
-            <p>Autopilot:</p>
+            <p>displaySize: {{ selectedSum.displaySize }}</p>
+            <p>Display HeadsUp: {{ selectedSum.displayHeadsUp ? "Yes" : "No" }}</p>
+            <p>Autopilot: {{ selectedSum.autopilot ? "Yes" : "No" }}</p>
           </div>
         </div>
 
       </div>
+      <input class="price" type="text" placeholder="Insert price" [(ngModel)]="insertedPrice">
       <div class="buttons">
         <button class="intBtn" (click)="confirm()">Confirm</button>
         <button class="intBtn" (click)="close()">Close</button>
+        <button class="intBtn" (click)="cancel(selectedSum)">Deny</button>
       </div>
     </div>
   </div>

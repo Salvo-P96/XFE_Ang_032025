@@ -41,4 +41,5 @@ export class NavbarComponent {
     this.isAdmin = false;
     this.goTo('');
   }
+
 }

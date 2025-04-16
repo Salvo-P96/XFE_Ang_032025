@@ -28,8 +28,15 @@ export class SummaryComponent {
     if (element) {
       element.style.display = 'block';
     }
-      this.carBuild= JSON.parse(localStorage.getItem("carBuilds")!);
-
+    this.carBuild= JSON.parse(localStorage.getItem("carBuilds")!);
+    const savedCarBuild = localStorage.getItem("carBuilds");
+    console.log(this.carBuild)
+    if (savedCarBuild) {
+      this.carBuild = JSON.parse(savedCarBuild);
+    } else {
+      this.carBuild = new customCar();
+    }
+    
 
 
   }

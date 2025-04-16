@@ -18,6 +18,11 @@ export class CarBuildService {
     builds.push(build);
     localStorage.setItem(this.storageKey, JSON.stringify(builds));
   }
+  removeBuild(index: number): void {
+    const builds = this.getBuilds();
+    builds.splice(index, 1);
+    localStorage.setItem(this.storageKey, JSON.stringify(builds));
+  }
 
   clearBuilds(): void {
     localStorage.removeItem(this.storageKey);

@@ -95,6 +95,7 @@ export class CustomBuildComponent {
         (build.displaySize = this.carForm.value.displaySize),
         (build.displayHeadsUp = this.carForm.value.displayHeadsUp),
         (build.autopilot = this.carForm.value.autopilot);
+        (build.date = new Date().toLocaleDateString());
 
       console.log(build);
 

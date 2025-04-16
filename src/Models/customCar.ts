@@ -21,5 +21,8 @@ export class customCar{
     public displayHeadsUp?:boolean;
     public autopilot?:boolean;
 
+    public date?:string;
+    public price?:number;
+
     constructor(){}
 }

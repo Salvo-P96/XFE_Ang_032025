@@ -1,24 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { isEmpty } from 'rxjs';
+import { FormsModule } from '@angular/forms';
 import { NgIf, NgFor } from '@angular/common';
 import { CarBuildService } from '../../Services/car-build.service';
 
 @Component({
   selector: 'app-admin-home',
   imports: [NgIf,
-            NgFor
+            NgFor,
+            FormsModule
    ],
   templateUrl: './admin-home.component.html',
   styleUrls: ['./admin-home.component.scss']
 })
 export class AdminHomeComponent implements OnInit {
   userName: string = '';
-  summaryList:any[]=[];
+  insertedPrice: string = '';
   isListEmpty:boolean=true;
   isReviewed:boolean=false;
+  isShown:boolean= false;
+  summaryList:any[]=[];
   renderer: any;
   div: any;
-  isShown:boolean= false;
 
   constructor(private carBuildService: CarBuildService){}
 
@@ -38,10 +40,8 @@ export class AdminHomeComponent implements OnInit {
         
       }
   }
-  
-  saveReview(){
-    this.isReviewed=true;
-  }
+
+selectedSum:any=null;
 
   clear(){
     this.carBuildService.clearBuilds()
@@ -50,14 +50,37 @@ export class AdminHomeComponent implements OnInit {
     console.log(this.summaryList)
   }
 
-  show(){
+  show(build:any){
     this.isShown=true;
+    this.selectedSum=build
   }
   close(){
     this.isShown=false;
+    this.selectedSum=null
   }
   confirm(){
-    this.isReviewed=true;
-    console.log(this.isReviewed)
+    if (this.insertedPrice.trim() !== '') {
+      this.selectedSum.price = this.insertedPrice;
+      this.isReviewed = true;
+  
+      localStorage.setItem('carBuilds', JSON.stringify(this.summaryList));
+  
+      console.log('Prezzo inserito:', this.insertedPrice);
+      this.insertedPrice = '';
+      this.close();
+    } else {
+      alert('Inserisci un prezzo prima di confermare.');
+    }
+  }
+
+  cancel(build: any){
+    const index = this.summaryList.indexOf(this.selectedSum);
+  if (index !== -1) {
+    this.carBuildService.removeBuild(index);
+    this.summaryList.splice(index, 1);
+    this.selectedSum = null;
+    this.isShown = false;
+    this.isListEmpty = this.summaryList.length === 0;
+  }
   }
 }

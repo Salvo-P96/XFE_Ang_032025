@@ -42,6 +42,10 @@
   background-color: #eeeeee;
 }
 
+.summaryCont:hover{
+  background-color: #e1e1e1;
+}
+
 .summaryCont p{
   padding: 10px 15px;
 }
@@ -141,6 +145,8 @@
 .buildCont{
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .buttons{
@@ -155,4 +161,10 @@
   padding: 5px;
   border: 1px solid #58585879;
   border-radius: 10%;
+}
+
+.price{
+  width: 30vw;
+  padding: 5px 15px;
+  border-radius: 10px;
 }
