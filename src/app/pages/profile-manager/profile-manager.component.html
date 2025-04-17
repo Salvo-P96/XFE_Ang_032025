@@ -16,7 +16,7 @@
  <div class="confirmCard" *ngIf="confirmation">
     <div class="passwordCard">
         <p>Insert the old password</p>
-        <input type="password" name="" id="" placeholder="...">
+        <input type="password" [(ngModel)]="passwordInput" placeholder="...">
         <button (click)="confirmPassword()">Confirm</button>
         <button (click)="cancel()">Cancel</button>
     </div>

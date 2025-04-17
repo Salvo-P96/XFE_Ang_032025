@@ -48,9 +48,12 @@ export class ProfileManagerComponent {
 
   confirmPassword() {
     this.loginService.getUsers().subscribe((users) => {
+      console.log('Utenti recuperati:', users);
+      console.log('Valori di input:', this.name, this.passwordInput);
       const user = users.find(
         (u) => u.name === this.name && u.password === this.passwordInput
       );
+      
 
       if (user) {
         console.log(`Access granted to modify: ${this.targetField}`);
@@ -66,7 +69,7 @@ export class ProfileManagerComponent {
 
   modifyField(field: string) {
     this.editing = true;
-    this.editValue = this[field];
+    this.editValue = field;
   }
   saveChange() {
     if (this.targetField && this.editValue.trim() !== '') {
