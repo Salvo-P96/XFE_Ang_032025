@@ -45,6 +45,7 @@ export class LoginComponent {
         this.name = user.name;
         this.loginService.setLoggedUser(user);
         this.router.navigate(['adminZone']);
+        
       } else {
         console.log("Login fallito");
         this.admin = false;

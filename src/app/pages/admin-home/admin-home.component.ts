@@ -37,7 +37,6 @@ export class AdminHomeComponent implements OnInit {
   }
 
   clear() {
-    // Qui potresti voler cancellare tutti via DELETE uno a uno (json-server non supporta delete all)
     this.summaryList.forEach(build => {
       this.carBuildService.removeBuild(build.id).subscribe();
     });
