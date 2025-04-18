@@ -1,17 +1,22 @@
-[
+{
+  "users": [
     {
+      "id": 1,
       "username": "pippo",
       "password": "0000",
       "name": "Pippo"
     },
     {
+      "id": 2,
       "username": "mario",
       "password": "1234",
       "name": "Mario"
     },
     {
+      "id": 3,
       "username": "anna",
       "password": "asdf",
       "name": "Anna"
     }
   ]
+}

@@ -19,6 +19,7 @@ export class ProfileManagerComponent {
   targetField: string = '';
   editing: boolean = false;
   editValue: string = '';
+  userPF: any;
 
   constructor(private loginService: LoginService) {}
 
@@ -26,10 +27,11 @@ export class ProfileManagerComponent {
     const element: HTMLElement | null = document.getElementById('mainNav');
     if (element) element.style.display = 'block';
 
-    const storedUsername = JSON.parse(localStorage.getItem('username') || '""');
-    if (storedUsername) {
-      this.username = storedUsername;
-    }
+    this.userPF = JSON.parse(localStorage.getItem('user') || '{}');
+    console.log('user: ', this.userPF);
+
+    this.username = this.userPF.username;
+    this.name = this.userPF.name;
   }
 
   openConfirm(field: string) {
@@ -47,24 +49,15 @@ export class ProfileManagerComponent {
   }
 
   confirmPassword() {
-    this.loginService.getUsers().subscribe((users) => {
-      console.log('Utenti recuperati:', users);
-      console.log('Valori di input:', this.name, this.passwordInput);
-      const user = users.find(
-        (u) => u.name === this.name && u.password === this.passwordInput
-      );
-      
-
-      if (user) {
-        console.log(`Access granted to modify: ${this.targetField}`);
-        this.confirmation = false;
-
-        this.modifyField(this.targetField);
-      } else {
-        this.wrongPassword = true;
-        console.log('Wrong password');
-      }
-    });
+    if (this.userPF.password === this.passwordInput) {
+      console.log('Valori di input:', this.userPF.password, this.passwordInput);
+      console.log(`Access granted to modify: ${this.targetField}`);
+      this.confirmation = false;
+      this.modifyField(this.targetField);
+    } else {
+      this.wrongPassword = true;
+      console.log('Wrong password');
+    }
   }
 
   modifyField(field: string) {
@@ -74,6 +67,11 @@ export class ProfileManagerComponent {
   saveChange() {
     if (this.targetField && this.editValue.trim() !== '') {
       (this as any)[this.targetField] = this.editValue.trim();
+
+      this.userPF[this.targetField] = this.editValue.trim();
+
+      localStorage.setItem('user', JSON.stringify(this.userPF));
+
       console.log(`${this.targetField} aggiornato a: ${this.editValue}`);
 
       this.editing = false;

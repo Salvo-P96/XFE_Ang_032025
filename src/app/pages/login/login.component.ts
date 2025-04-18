@@ -52,6 +52,7 @@ export class LoginComponent {
         console.log(this.name);
         localStorage.setItem('admin', JSON.stringify(this.admin));
         localStorage.setItem('name', JSON.stringify(this.name));
+        localStorage.setItem('user',JSON.stringify(accessGranted))
         this.router.navigate(['adminZone']);
       } else {
         console.log("Access denied");
