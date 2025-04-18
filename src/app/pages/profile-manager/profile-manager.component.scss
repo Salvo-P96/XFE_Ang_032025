@@ -10,9 +10,18 @@
     justify-content: center;
 }
 
+.sectionCont{
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    border: 1px solid #2a2a2a4f;
+    border-radius: 10px;
+    padding: 4rem;
+}
+
 .sections{
     display: flex;
-    width: 20vw;
+    width: 15vw;
     justify-content: space-between;
 }
 
@@ -54,4 +63,18 @@
     border-radius: 10px;
     padding: 3px 15px;
     text-align: center;
+}
+
+.buttons{
+    display: flex;
+    width: 8vw;
+    margin-top: 10px;
+    justify-content: space-between;
+    
+}
+
+button{
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 1px solid #2a2a2a69;
 }

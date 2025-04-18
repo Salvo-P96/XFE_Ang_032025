@@ -6,27 +6,31 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class LoginService {
+  private apiUrl = 'http://localhost:3000/users';
 
-  private loggedUser: any = null;
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getUsers(): Observable<any[]> {
-    return this.http.get<any[]>('assets/database/users.json');
+    return this.http.get<any[]>(this.apiUrl);
   }
 
+  getUserByUsername(username: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}?username=${username}`);
+  }
+
+  updateUser(user: any): Observable<any> {
+    return this.http.put(`${this.apiUrl}/${user.id}`, user);
+  }
 
   setLoggedUser(user: any): void {
-    this.loggedUser = user;
+    localStorage.setItem('user', JSON.stringify(user));
   }
-
 
   getLoggedUser(): any {
-    return this.loggedUser;
+    return JSON.parse(localStorage.getItem('user') || '{}');
   }
 
-
   logout(): void {
-    this.loggedUser = null;
+    localStorage.removeItem('user');
   }
 }

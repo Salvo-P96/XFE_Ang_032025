@@ -1,24 +1,30 @@
 <div class="customBody">
-
+  <div class="sectionCont">
     <div class="sections profile"><p>Username: {{username}}</p> <button (click)="openConfirm('username')">Change</button> </div>
     <div class="sections name"><p>Name: {{name}}</p> <button (click)="openConfirm('name')">Change</button> </div>
     <div class="sections password"><p>Password </p> <button (click)="openConfirm('password')">Change</button> </div>
+  </div>
 </div>
-<div *ngIf="editing" class="editCard">
+<div class="confirmCard" *ngIf="editing">
+  <div class="passwordCard">
     <p>Insert new {{ targetField }}</p>
-    <input type="text" [(ngModel)]="editValue" />
+    <input type="text" [(ngModel)]="editValue" placeholder="..."/>
     <div class="buttons">
       <button (click)="saveChange()">Save</button>
       <button (click)="editing = false">Cancel</button>
     </div>
   </div>
+</div>
 <!-- -----------password confirmation--------- -->
  <div class="confirmCard" *ngIf="confirmation">
     <div class="passwordCard">
         <p>Insert the old password</p>
         <input type="password" [(ngModel)]="passwordInput" placeholder="...">
-        <button (click)="confirmPassword()">Confirm</button>
-        <button (click)="cancel()">Cancel</button>
+        <p *ngIf="wrongPassword" style="color: #FF221a; font-size: small;">Error: Wrong Password</p>
+        <div class="buttons">
+          <button (click)="confirmPassword()">Confirm</button>
+          <button (click)="cancel()">Cancel</button>
+        </div>
     </div>
  </div>
  

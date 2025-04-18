@@ -1,61 +1,52 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { NgIf } from '@angular/common';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from '../../Services/login.service';
+import { NgIf } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
-  imports: [
-    NgIf,
-    ReactiveFormsModule,
-  ],
+  imports: [NgIf, ReactiveFormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
-  storedusername: string = "pippo"
-  storedpassword: string = "0000"
-  admin:boolean=false;
-  name:string="";
-
   loginForm: FormGroup;
+  admin: boolean = false;
+  name: string = "";
 
-  constructor(private fb: FormBuilder, private loginService: LoginService,  private router: Router) {
-
+  constructor(
+    private fb: FormBuilder,
+    private loginService: LoginService,
+    private router: Router
+  ) {
     this.loginForm = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
-    })
-
+    });
   }
 
-  ngOnInit(){
+  ngOnInit() {
     const element: HTMLElement | null = document.getElementById('mainNav');
-
-    if (element) {
-      element.style.display = 'block';
-    }
-    this.loginService.getUsers().subscribe(res => console.log(res))
+    if (element) element.style.display = 'block';
   }
+
   onSubmit(): void {
     const username = this.loginForm.get('username')?.value;
     const password = this.loginForm.get('password')?.value;
 
-    this.loginService.getUsers().subscribe(users => {
-      const accessGranted = users.find(user => user.username === username && user.password === password);
+    this.loginService.getUserByUsername(username).subscribe(users => {
+      const user = users.find(u => u.password === password);
 
-      if (accessGranted) {
-        console.log("Access granted to:", accessGranted.username);
+      if (user) {
+        console.log("Login OK:", user.username);
         this.admin = true;
-        this.name = accessGranted.name;
-        console.log(this.name);
-        localStorage.setItem('admin', JSON.stringify(this.admin));
-        localStorage.setItem('name', JSON.stringify(this.name));
-        localStorage.setItem('user',JSON.stringify(accessGranted))
+        this.name = user.name;
+        this.loginService.setLoggedUser(user);
         this.router.navigate(['adminZone']);
       } else {
-        console.log("Access denied");
+        console.log("Login fallito");
         this.admin = false;
       }
     });

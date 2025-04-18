@@ -77,30 +77,22 @@ export class CustomBuildComponent {
 
   submit(): void {
     this.eventService.emitSummary(true);
-
+  
     if (this.carForm.valid) {
       const build = new customCar();
-      (build.brand = this.carForm.value.brand),
-        (build.model = this.carForm.value.model),
-        (build.configuration = this.carForm.value.configuration),
-        (build.fuel = this.carForm.value.fuel),
-        (build.color = this.carForm.value.color),
-        (build.finish = this.carForm.value.finish),
-        (build.rimType = this.carForm.value.rimType),
-        (build.rimSize = this.carForm.value.rimSize),
-        (build.seatMaterial = this.carForm.value.seatMaterial),
-        (build.seatColor = this.carForm.value.seatColor),
-        (build.upholsteryColor = this.carForm.value.upholsteryColor),
-        (build.trimType = this.carForm.value.trimType),
-        (build.displaySize = this.carForm.value.displaySize),
-        (build.displayHeadsUp = this.carForm.value.displayHeadsUp),
-        (build.autopilot = this.carForm.value.autopilot);
-        (build.date = new Date().toLocaleDateString());
-
-      console.log(build);
-
-      this.carBuildService.saveBuild(build);
-      console.log('Build salvata con successo!');
+  
+      Object.assign(build, this.carForm.value);
+      build.date = new Date().toLocaleDateString();
+  
+      this.carBuildService.saveBuild(build).subscribe({
+        next: () => {
+          console.log('Build salvata con successo!');
+          this.router.navigate(['/adminZone']);
+        },
+        error: (err) => {
+          console.error('Errore nel salvataggio:', err);
+        }
+      });
     }
   }
 }

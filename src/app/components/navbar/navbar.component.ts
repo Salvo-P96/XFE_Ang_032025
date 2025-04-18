@@ -1,8 +1,9 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { EventService } from '../../Services/event.service';
 import { Subscription } from 'rxjs';
 import { CommonModule, NgIf } from '@angular/common';
+import { LoginService } from '../../Services/login.service';
 
 @Component({
   selector: 'app-navbar',
@@ -15,31 +16,32 @@ export class NavbarComponent {
   isAdmin: boolean = false;
   private preventive: Subscription = new Subscription();
 
-  constructor(private eventService: EventService, private router: Router) {}
+  constructor(
+    private eventService: EventService,
+    private loginService: LoginService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.preventive = this.eventService.summary$.subscribe((show: boolean) => {
       this.showSummary = show;
     });
-    this.isAdmin = JSON.parse(localStorage.getItem('admin') || 'false');
-    console.log(this.isAdmin)
+
+    const user = this.loginService.getLoggedUser();
+    this.isAdmin = !!user?.username;
   }
 
   ngOnDestroy() {
-    if (this.preventive) {
-      this.preventive.unsubscribe();
-    }
+    this.preventive.unsubscribe();
   }
 
-  goTo(r: string): void {
-    this.router.navigate([r]);
+  goTo(route: string): void {
+    this.router.navigate([route]);
   }
 
   logOut(): void {
-    localStorage.removeItem('admin');
-    localStorage.removeItem('name');
+    this.loginService.logout();
     this.isAdmin = false;
-    this.goTo('');
+    this.router.navigate(['']);
   }
-
 }

@@ -1,30 +1,31 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CarBuildService {
-  private storageKey = 'carBuilds';
+  private apiUrl = 'http://localhost:3000/carBuilds';
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
-  getBuilds(): any[] {
-    const builds = localStorage.getItem(this.storageKey);
-    return builds ? JSON.parse(builds) : [];
+  getBuilds(): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl);
   }
 
-  saveBuild(build: any): void {
-    const builds = this.getBuilds();
-    builds.push(build);
-    localStorage.setItem(this.storageKey, JSON.stringify(builds));
-  }
-  removeBuild(index: number): void {
-    const builds = this.getBuilds();
-    builds.splice(index, 1);
-    localStorage.setItem(this.storageKey, JSON.stringify(builds));
+  updateBuild(build: any): Observable<any> {
+    return this.http.put(`${this.apiUrl}/${build.id}`, build);
   }
 
-  clearBuilds(): void {
-    localStorage.removeItem(this.storageKey);
+  removeBuild(id: number): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/${id}`);
+  }
+
+  clearBuilds(): Observable<any> {
+    return this.http.get<any[]>(this.apiUrl);
+  }
+  saveBuild(build: any): Observable<any> {
+    return this.http.post('http://localhost:3000/carBuilds', build);
   }
 }
