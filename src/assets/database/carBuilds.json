@@ -1,0 +1,24 @@
+{
+  "carBuilds": [
+    {
+      "id": "398e",
+      "brand": "RollsRoyce",
+      "model": "Spectre",
+      "configuration": "Black Badge",
+      "fuel": "Electric",
+      "color": "Vapour Violet",
+      "finish": "Crystal",
+      "rimType": "Led Illuminated",
+      "rimSize": "26\"",
+      "seatMaterial": "Alcantara",
+      "seatColor": "Black",
+      "upholsteryColor": "Black",
+      "trimType": "Mahogany",
+      "displaySize": "22\"",
+      "displayHeadsUp": true,
+      "autopilot": true,
+      "date": "22/04/2025",
+      "price": "200000"
+    }
+  ]
+}

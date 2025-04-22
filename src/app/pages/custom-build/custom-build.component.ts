@@ -80,9 +80,10 @@ export class CustomBuildComponent {
   
     if (this.carForm.valid) {
       const build = new customCar();
-  
       Object.assign(build, this.carForm.value);
       build.date = new Date().toLocaleDateString();
+  
+      localStorage.setItem("carBuilds", JSON.stringify(build));
   
       this.carBuildService.saveBuild(build).subscribe({
         next: () => {

@@ -34,6 +34,7 @@ export class AdminHomeComponent implements OnInit {
       this.summaryList = builds;
       this.isListEmpty = builds.length === 0;
     });
+    
   }
 
   clear() {

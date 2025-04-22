@@ -24,21 +24,17 @@ export class SummaryComponent {
 
   ngOnInit(): void {
     const element: HTMLElement | null = document.getElementById('mainNav');
-
-    if (element) {
-      element.style.display = 'block';
-    }
-    this.carBuild= JSON.parse(localStorage.getItem("carBuilds")!);
+    if (element) element.style.display = 'block';
+  
     const savedCarBuild = localStorage.getItem("carBuilds");
-    console.log(this.carBuild)
+  
     if (savedCarBuild) {
       this.carBuild = JSON.parse(savedCarBuild);
     } else {
       this.carBuild = new customCar();
     }
-    
-
-
+  
+    console.log(this.carBuild);
   }
 }
 
