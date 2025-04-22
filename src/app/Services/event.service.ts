@@ -6,22 +6,25 @@ import { customCar } from '../../Models/customCar';
   providedIn: 'root'
 })
 export class EventService {
-
   private summarySource = new Subject<boolean>();
-  private buildSummary = new Subject<customCar>
+  private buildSummary = new Subject<customCar>();
 
   summary$ = this.summarySource.asObservable();
   buildSummary$ = this.buildSummary.asObservable();
 
+  constructor() {
+    const saved = localStorage.getItem('showSummary');
+    if (saved === 'true') {
+      this.summarySource.next(true);
+    }
+  }
+
   emitSummary(show: boolean) {
+    localStorage.setItem('showSummary', show.toString());
     this.summarySource.next(show);
   }
 
-  setCarbuild(build:customCar){
-    this.buildSummary.next(build)
+  setCarbuild(build: customCar) {
+    this.buildSummary.next(build);
   }
-
-
-
-  constructor() { }
 }

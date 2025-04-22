@@ -88,7 +88,7 @@ export class CustomBuildComponent {
       this.carBuildService.saveBuild(build).subscribe({
         next: () => {
           console.log('Build salvata con successo!');
-          this.router.navigate(['/adminZone']);
+          this.eventService.setCarbuild(build);
         },
         error: (err) => {
           console.error('Errore nel salvataggio:', err);

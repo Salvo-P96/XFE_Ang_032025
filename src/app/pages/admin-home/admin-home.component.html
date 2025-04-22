@@ -14,7 +14,7 @@
           <p>Brand: {{ build.brand }}</p>
           <p>Model: {{ build.model }}</p>
           <p>Date: {{build.date}}</p>
-          <p *ngIf="isReviewed">price: {{build.price}}</p>
+          <p *ngIf="build.price">price: {{build.price}}</p>
           <button type="button" (click)="show(build)">Review</button>
         </div>
       </div>

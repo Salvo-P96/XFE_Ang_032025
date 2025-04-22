@@ -58,9 +58,13 @@ export class AdminHomeComponent implements OnInit {
   confirm() {
     if (this.insertedPrice.trim() !== '') {
       this.selectedSum.price = this.insertedPrice;
-
+  
       this.carBuildService.updateBuild(this.selectedSum).subscribe(() => {
-        this.isReviewed = true;
+        const index = this.summaryList.findIndex(b => b.id === this.selectedSum.id);
+        if (index !== -1) {
+          this.summaryList[index].price = this.insertedPrice;
+        }
+  
         this.insertedPrice = '';
         this.close();
       });
