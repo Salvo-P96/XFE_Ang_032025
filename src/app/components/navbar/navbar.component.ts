@@ -14,7 +14,7 @@ import { LoginService } from '../../Services/login.service';
 export class NavbarComponent {
   showSummary: boolean = false;
   isAdmin: boolean = false;
-  private preventive: Subscription = new Subscription();
+  private subscriptions: Subscription[] = [];
 
   constructor(
     private eventService: EventService,
@@ -23,16 +23,23 @@ export class NavbarComponent {
   ) {}
 
   ngOnInit() {
-    this.preventive = this.eventService.summary$.subscribe((show: boolean) => {
+    let preventive = this.eventService.summary$.subscribe((show: boolean) => {
       this.showSummary = show;
     });
-
+    //Aggiunta subscription per intercettare l'evento
+    let admin= this.eventService.isAdmin$.subscribe(name =>{
+      this.isAdmin = name != null;
+    })
+    this.subscriptions.push(preventive);
+    this.subscriptions.push(admin);
     const user = this.loginService.getLoggedUser();
     this.isAdmin = !!user?.username;
   }
 
   ngOnDestroy() {
-    this.preventive.unsubscribe();
+    this.subscriptions.forEach(sub =>{
+      sub.unsubscribe();
+    })
   }
 
   goTo(route: string): void {

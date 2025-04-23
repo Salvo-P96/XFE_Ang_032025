@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { EventService } from './event.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ import { Observable } from 'rxjs';
 export class LoginService {
   private apiUrl = 'http://localhost:3000/users';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private eventService: EventService) {}
 
   getUsers(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl);
@@ -27,7 +28,13 @@ export class LoginService {
   }
 
   getLoggedUser(): any {
-    return JSON.parse(localStorage.getItem('user') || '{}');
+    //Aggiunta servizio per intercettare l'user loggato
+    if(localStorage.getItem('user') != null){
+      this.eventService.setAdmin(JSON.parse(localStorage.getItem('user')!).name);
+      return JSON.parse(localStorage.getItem('user')!);
+    }else{
+      '{}'
+    }
   }
 
   logout(): void {

@@ -8,9 +8,13 @@ import { customCar } from '../../Models/customCar';
 export class EventService {
   private summarySource = new Subject<boolean>();
   private buildSummary = new Subject<customCar>();
+  //Aggiunta Subject per admin
+  private isAdmin = new Subject<string>();
 
   summary$ = this.summarySource.asObservable();
   buildSummary$ = this.buildSummary.asObservable();
+  //Aggiunto handler
+  isAdmin$ = this.isAdmin.asObservable();
 
   constructor() {
     const saved = localStorage.getItem('showSummary');
@@ -27,4 +31,10 @@ export class EventService {
   setCarbuild(build: customCar) {
     this.buildSummary.next(build);
   }
+
+  //aggiunta funzione
+  setAdmin(name: string) {
+    this.isAdmin.next(name);
+  }
+
 }
