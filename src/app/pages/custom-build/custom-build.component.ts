@@ -76,9 +76,9 @@ export class CustomBuildComponent {
   }
 
   submit(): void {
-    this.eventService.emitSummary(true);
-  
+    
     if (this.carForm.valid) {
+      this.eventService.emitSummary(true);
       const build = new customCar();
       Object.assign(build, this.carForm.value);
       build.date = new Date().toLocaleDateString();

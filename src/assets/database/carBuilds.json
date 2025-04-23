@@ -1,25 +1,6 @@
 {
   "carBuilds": [
     {
-      "id": "1950",
-      "brand": "RollsRoyce",
-      "model": "Spectre",
-      "configuration": "Black Badge",
-      "fuel": "Electric",
-      "color": "Vapour Violet",
-      "finish": "Crystal",
-      "rimType": "Led Illuminated",
-      "rimSize": "26\"",
-      "seatMaterial": "Alcantara",
-      "seatColor": "Black",
-      "upholsteryColor": "Black",
-      "trimType": "Mahogany",
-      "displaySize": "22\"",
-      "displayHeadsUp": true,
-      "autopilot": true,
-      "date": "22/04/2025"
-    },
-    {
       "id": "60b4",
       "brand": "RollsRoyce",
       "model": "Spectre",
@@ -40,13 +21,13 @@
       "price": "200000"
     },
     {
-      "id": "cb3d",
+      "id": "eed4",
       "brand": "RollsRoyce",
-      "model": "Spectre",
-      "configuration": "Black Badge",
-      "fuel": "Electric",
-      "color": "Vapour Violet",
-      "finish": "Crystal",
+      "model": "Ghost",
+      "configuration": "Deluxe",
+      "fuel": "Diesel",
+      "color": "Black Diamond",
+      "finish": "Pearlescent",
       "rimType": "Led Illuminated",
       "rimSize": "26\"",
       "seatMaterial": "Alcantara",
@@ -56,10 +37,10 @@
       "displaySize": "22\"",
       "displayHeadsUp": true,
       "autopilot": true,
-      "date": "22/04/2025"
+      "date": "23/04/2025"
     },
     {
-      "id": "238b",
+      "id": "1056",
       "brand": "RollsRoyce",
       "model": "Spectre",
       "configuration": "Black Badge",
@@ -75,45 +56,7 @@
       "displaySize": "22\"",
       "displayHeadsUp": true,
       "autopilot": true,
-      "date": "22/04/2025"
-    },
-    {
-      "id": "ab6d",
-      "brand": "RollsRoyce",
-      "model": "Spectre",
-      "configuration": "Black Badge",
-      "fuel": "Electric",
-      "color": "Vapour Violet",
-      "finish": "Crystal",
-      "rimType": "Led Illuminated",
-      "rimSize": "26\"",
-      "seatMaterial": "Alcantara",
-      "seatColor": "Black",
-      "upholsteryColor": "Black",
-      "trimType": "Mahogany",
-      "displaySize": "22\"",
-      "displayHeadsUp": true,
-      "autopilot": true,
-      "date": "22/04/2025"
-    },
-    {
-      "id": "0631",
-      "brand": "RollsRoyce",
-      "model": "Spectre",
-      "configuration": "Black Badge",
-      "fuel": "Electric",
-      "color": "Vapour Violet",
-      "finish": "Crystal",
-      "rimType": "Led Illuminated",
-      "rimSize": "26\"",
-      "seatMaterial": "Alcantara",
-      "seatColor": "Black",
-      "upholsteryColor": "Black",
-      "trimType": "Mahogany",
-      "displaySize": "22\"",
-      "displayHeadsUp": true,
-      "autopilot": true,
-      "date": "22/04/2025"
+      "date": "23/04/2025"
     }
   ]
 }
