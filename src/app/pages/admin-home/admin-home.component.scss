@@ -38,6 +38,7 @@
 .summaryCont {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   background-color: #eeeeee;
 }
@@ -167,4 +168,19 @@
   width: 30vw;
   padding: 5px 15px;
   border-radius: 10px;
+  text-align: center;
+}
+
+.okSvg{
+  margin-left: 1.2rem;
+  width: 2rem;
+  height: 2rem;
+  
+}
+
+.modify{
+  border-radius: 10px;
+  border: 1px solid #00000099;
+  padding-left: 1rem;
+  width: 50%;
 }

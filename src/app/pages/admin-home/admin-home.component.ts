@@ -16,6 +16,7 @@ export class AdminHomeComponent implements OnInit {
   isListEmpty: boolean = true;
   isReviewed: boolean = false;
   isShown: boolean = false;
+  isEditing: boolean = false;
   summaryList: any[] = [];
   selectedSum: any = null;
 
@@ -34,7 +35,6 @@ export class AdminHomeComponent implements OnInit {
       this.summaryList = builds;
       this.isListEmpty = builds.length === 0;
     });
-    
   }
 
   clear() {
@@ -47,25 +47,30 @@ export class AdminHomeComponent implements OnInit {
 
   show(build: any) {
     this.isShown = true;
-    this.selectedSum = build;
+    this.selectedSum = { ...build };
+    this.isEditing = false;
+    this.insertedPrice = this.selectedSum.price || '';
   }
 
   close() {
     this.isShown = false;
     this.selectedSum = null;
+    this.insertedPrice = '';
+    this.isEditing = false;
   }
 
   confirm() {
     if (this.insertedPrice.trim() !== '') {
       this.selectedSum.price = this.insertedPrice;
-  
+
       this.carBuildService.updateBuild(this.selectedSum).subscribe(() => {
         const index = this.summaryList.findIndex(b => b.id === this.selectedSum.id);
         if (index !== -1) {
-          this.summaryList[index].price = this.insertedPrice;
+          this.summaryList[index] = { ...this.selectedSum };
         }
-  
-        this.insertedPrice = '';
+
+         this.insertedPrice = '';
+        this.isEditing = false;
         this.close();
       });
     } else {
