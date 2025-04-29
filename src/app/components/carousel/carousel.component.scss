@@ -33,7 +33,6 @@
     
 @media (max-width:480px) {
 
-    //--larghezza fissa, cambiare--//
     .caroContent{
         display: flex;
         align-items: center;
@@ -43,7 +42,7 @@
         background-image: url("../../../assets/About-Mobile.png");
         background-position: center;
         background-repeat: no-repeat;
-        background-size:contain;
+        background-size:cover;
     }
 
     .mobileTxt{
@@ -53,7 +52,7 @@
         justify-content: center;
         background-color: #f6f8f4a4;
         width: 30%;
-        height: 80%;
+        height: 100%;
         padding: 0 3rem;
     }
 
