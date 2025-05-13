@@ -28,7 +28,6 @@ export class LoginService {
   }
 
   getLoggedUser(): any {
-    //Aggiunta servizio per intercettare l'user loggato
     if(localStorage.getItem('user') != null){
       this.eventService.setAdmin(JSON.parse(localStorage.getItem('user')!).name);
       return JSON.parse(localStorage.getItem('user')!);

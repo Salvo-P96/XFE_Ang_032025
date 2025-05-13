@@ -1,0 +1,233 @@
+import { Component, ViewChild } from '@angular/core';
+import { NgFor, NgIf } from '@angular/common';
+import { MatTableDataSource } from '@angular/material/table';
+import { ItFormModule } from 'design-angular-kit';
+import { MatPaginator } from '@angular/material/paginator';
+import * as XLSX from 'xlsx';
+import { Router } from '@angular/router';
+
+import {
+  ItSelectComponent,
+  ItInputComponent,
+  ItTableComponent,
+  ItSpinnerComponent,
+  ItBreadcrumbComponent,
+  ItBreadcrumbItemComponent,
+  ItPaginationComponent,
+} from 'design-angular-kit';
+import { FormsModule } from '@angular/forms';
+
+interface TabellaItem {
+  titolo: string;
+  descrizione: string;
+  periodoPubblicazione: Date;
+  tipologia?: string;
+  allegati?: { nome: string; url: string }[];
+}
+
+@Component({
+  selector: 'app-table',
+  standalone: true,
+  templateUrl: './table.component.html',
+  imports: [
+    NgFor,
+    NgIf,
+    FormsModule,
+    ItBreadcrumbComponent,
+    ItBreadcrumbItemComponent,
+    ItPaginationComponent,
+    ItTableComponent,
+    ItSpinnerComponent,
+    ItInputComponent,
+    ItSelectComponent,
+  ],
+})
+export class TableComponent {
+  filteredData: TabellaItem[] = [];
+  separator = '/';
+  items = [
+    {
+      link: 'https://www.comune.saponara.me.it/',
+      label: 'Home',
+      active: false,
+    },
+    {
+      link: 'https://www.comune.saponara.me.it/albo-pretorio/',
+      label: 'Albo Pretorio',
+      active: false,
+    },
+    {
+      link: 'https://www.comune.saponara.me.it/albo-pretorio/archivio/',
+      label: 'Archivio',
+      active: true,
+    },
+  ];
+
+  i = 4;
+  isLoading: boolean = false;
+
+  constructor(private router: Router) {}
+
+  displayedColumns: string[] = [
+    'titolo',
+    'descrizione',
+    'periodoPubblicazione',
+    'dettagli',
+  ];
+  dataSource = new MatTableDataSource<TabellaItem>([]);
+  tipologie: string[] = [];
+
+  filtroTitolo = '';
+  filtroDescrizione = '';
+  filtroDataDa = '';
+  filtroDataA = '';
+  filtroTipologia = '';
+  risultatiPerPagina = 10;
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+
+  ngOnInit() {
+    this.caricaExcel();
+  }
+  caricaExcel() {
+  this.isLoading = true;
+
+  fetch('assets/File di esempio per sviluppo.xlsx')
+    .then(res => res.arrayBuffer())
+    .then(buffer => {
+      const data = new Uint8Array(buffer);
+      const wb = XLSX.read(data, { type: 'array', cellText: false, cellDates: true });
+
+      const sheet = wb.Sheets[wb.SheetNames[0]];
+      
+      const range = XLSX.utils.decode_range(sheet['!ref']!);
+      const rows: any[] = [];
+      const allegati: { nome: string; url: string }[] = [];
+      console.log("range",range)
+      for (let R = range.s.r + 1; R <= range.e.r; R++) {
+        const row: any = {};
+        
+        for (let C = range.s.c; C <= range.e.c; C++) {
+          const cellAddress = XLSX.utils.encode_cell({ r: R, c: C });
+          const cell = sheet[cellAddress];
+          const headerAddress = XLSX.utils.encode_cell({ r: 0, c: C });
+          const header = sheet[headerAddress]?.v?.toString()?.toLowerCase();
+          console.log("cell:", cell.l.Target)
+          if (!cell || !header) continue;
+
+          if (header.includes('allegati_links')) {
+            if (cell.l && cell.l.Target) {
+              console.log(cell.l.Target)
+              allegati.push({
+                nome: decodeURIComponent(cell.l.Target.split('/').pop()!),
+                url: cell.l.Target
+              });
+              console.log(allegati)
+            } 
+            // else if (cell.v) {
+              //   allegati.push({
+            //     nome: cell.v,
+            //     url: cell.v
+            //   });
+            // }
+          } else {
+            row[header] = cell.v;
+          }
+        }
+        
+        row.allegati = allegati;
+        rows.push(row);
+      }
+
+      const tabellaData = rows.map(row => ({
+        titolo: row.titolo || '',
+        descrizione: row.descrizione || '',
+        periodoPubblicazione: row.pubblicazione || '',
+        tipologia: row.tipologia || '',
+        allegati: row.allegati || []
+      }));
+
+      this.dataSource.data = tabellaData;
+      this.filteredData = tabellaData;
+      this.currentPage = 0;
+      this.isLoading = false;
+
+      const tipi = new Set(tabellaData.map(r => r.tipologia));
+      this.tipologie = Array.from(tipi).filter(Boolean) as string[];
+    });
+}
+
+  filtra() {
+    const titolo = this.filtroTitolo.toLowerCase();
+    const descrizione = this.filtroDescrizione.toLowerCase();
+    const da = this.filtroDataDa ? new Date(this.filtroDataDa) : null;
+    const a = this.filtroDataA ? new Date(this.filtroDataA) : null;
+
+    this.filteredData = this.dataSource.data.filter((item) => {
+      const passaTitolo = item.titolo?.toLowerCase().includes(titolo);
+      const passaDescrizione = item.descrizione
+        ?.toLowerCase()
+        .includes(descrizione);
+      const passaTipologia = this.filtroTipologia
+        ? item.tipologia === this.filtroTipologia
+        : true;
+
+      const dataPub = new Date(item.periodoPubblicazione);
+      const passaData = (!da || dataPub >= da) && (!a || dataPub <= a);
+
+      return passaTitolo && passaDescrizione && passaTipologia && passaData;
+    });
+
+    this.currentPage = 0;
+  }
+
+  aggiornaRisultatiPerPagina(val: number) {
+    this.risultatiPerPagina = +val;
+    this.currentPage = 0;
+    console.log('risultati per pagina:' + this.risultatiPerPagina);
+  }
+
+  currentPage: number = 0;
+  pageOffset = 1;
+
+  getTotalPages(): number {
+    return Math.ceil(this.filteredData.length / this.risultatiPerPagina);
+  }
+
+  getPageData() {
+    const start = this.currentPage * this.risultatiPerPagina;
+    const end = start + this.risultatiPerPagina;
+    console.log('start:' + start, 'end:' + end);
+    return this.filteredData.slice(start, end);
+  }
+
+  getPage(event: number) {
+    this.currentPage = event;
+  }
+
+  resetFiltri() {
+    this.filtroTitolo = '';
+    this.filtroDescrizione = '';
+    this.filtroDataDa = '';
+    this.filtroDataA = '';
+    this.filtroTipologia = '';
+    this.filtra();
+  }
+
+  vaiADettaglio(row: any) {
+    this.router.navigate(['/details'], { state: { atto: row } });
+    console.log('ROW DETTAGLIO:', row);
+  }
+
+  parseAllegati(allegatiString: string): { nome: string; url: string }[] {
+    if (!allegatiString) return [];
+
+    return allegatiString.split(',').map((link) => {
+      const url = link.trim();
+      return {
+        nome: decodeURIComponent(url.substring(url.lastIndexOf('/') + 1)),
+        url: url,
+      };
+    });
+  }
+}

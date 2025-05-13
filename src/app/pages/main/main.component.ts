@@ -9,7 +9,7 @@ import { NavbarComponent } from '../../components/navbar/navbar.component';
   selector: 'app-main',
   imports: [ButtonRackComponent,
             CarouselComponent,
-            ItemSliderComponent,
+            //ItemSliderComponent,
             NavbarComponent
   ],
   templateUrl: './main.component.html',

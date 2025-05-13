@@ -1,0 +1,44 @@
+{
+    "users": [
+      {
+        "id": "1",
+        "username": "pippo",
+        "password": "0000",
+        "name": "Pippo"
+      },
+      {
+        "id": "2",
+        "username": "Piero",
+        "password": "1234",
+        "name": "Mario"
+      },
+      {
+        "id": "3",
+        "username": "anna",
+        "password": "asdf",
+        "name": "Anna"
+      }
+    ],
+    "carBuilds": [
+        {
+          "id": "b392",
+          "brand": "RollsRoyce",
+          "model": "Cullian",
+          "configuration": "Black Badge",
+          "fuel": "Electric",
+          "color": "Vapour Violet",
+          "finish": "Crystal",
+          "rimType": "Led Illuminated",
+          "rimSize": "26\"",
+          "seatMaterial": "Alcantara",
+          "seatColor": "Black",
+          "upholsteryColor": "Black",
+          "trimType": "Mahogany",
+          "displaySize": "22\"",
+          "displayHeadsUp": true,
+          "autopilot": true,
+          "date": "29/04/2025",
+          "price": "500000"
+        }
+      ]
+  }
